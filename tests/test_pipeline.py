@@ -176,7 +176,16 @@ def test_site_build(tmp_path):
     subprocess.run([sys.executable, str(ROOT / "run.py"), "--no-collect", "--out", str(tmp_path)], check=True, capture_output=True)
     spec = importlib.util.spec_from_file_location("build_site", ROOT / "site" / "build_site.py")
     bs = importlib.util.module_from_spec(spec); spec.loader.exec_module(bs)
+    bs.MIN_GROUP_VOTES = 0          # fixture is tiny; exercise the group charts too
+    # the same MP saved twice must not break the build (seen live)
+    mps_csv = tmp_path / "tables" / "mps.csv"
+    df = pd.read_csv(mps_csv, dtype=str)
+    pd.concat([df, df.iloc[[0]]]).to_csv(mps_csv, index=False)
     d = bs.build(tmp_path)
+    json.dumps(d, default=bs._json_default)   # must be serialisable
+    assert {c[0] for c in d["coh"]} == {"r", "sd", "kok"}
+    assert all(0 <= c[1] <= 100 and 0 <= c[2] <= 100 for c in d["coh"])
+    assert any(a[0] == "sd" and a[1] == "kok" for a in d["agree"])
     assert d["meta"]["votes"] == 2 and d["meta"]["speakers"] == ["5"]
     assert len(d["key"]) == 1 and d["key"][0]["agenda"] == "Välikysymys testiasiasta"
     assert len(d["key"][0]["v"]) == len(d["mps"]) == 5

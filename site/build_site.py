@@ -94,7 +94,8 @@ def build(data_dir: Path) -> dict:
         return sum(1 for d in rc_dates if s <= d <= e)
     per["io"] = per.apply(in_office, axis=1)
 
-    info = mps_t.set_index("mp_id") if not mps_t.empty else pd.DataFrame()
+    # one row per MP (the same person can be saved twice if the API answers under a normalised id)
+    info = mps_t.drop_duplicates("mp_id", keep="last").set_index("mp_id") if not mps_t.empty else pd.DataFrame()
     mins = {}
     for r_ in mins_t.itertuples() if not mins_t.empty else []:
         if (r_.end or "9999") >= "2023-06-20" and (r_.start or "") >= "2023-01-01":
@@ -135,8 +136,10 @@ def build(data_dir: Path) -> dict:
     for a in [c[0] for c in coh]:
         for c2 in [c[0] for c in coh]:
             if a in wide and c2 in wide:
-                both = wide[[a, c2]].dropna()
-                agree.append([a, c2, round(100 * (both[a] == both[c2]).mean(), 1) if len(both) else None, len(both)])
+                x, y = wide[a], wide[c2]          # two Series (wide[[a, a]] would duplicate the column)
+                mask = x.notna() & y.notna()
+                n = int(mask.sum())
+                agree.append([a, c2, round(100 * float((x[mask] == y[mask]).mean()), 1) if n else None, n])
             else:
                 agree.append([a, c2, None, 0])
 
@@ -147,6 +150,13 @@ def build(data_dir: Path) -> dict:
     return dict(meta=meta, mps=mps, key=key, coh=coh, agree=agree)
 
 
+def _json_default(o):
+    """numpy scalars -> Python; anything else is a bug worth a clear message."""
+    if hasattr(o, "item") and not hasattr(o, "__len__"):
+        return o.item()
+    raise TypeError(f"Cannot put {type(o).__name__} into site data: {str(o)[:200]}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default="data")
@@ -155,13 +165,13 @@ def main() -> None:
     a = ap.parse_args()
     d = build(Path(a.data))
     html = (HERE / "template.html").read_text(encoding="utf-8").replace(
-        "__DATA__", json.dumps(d, ensure_ascii=False, separators=(",", ":")))
+        "__DATA__", json.dumps(d, ensure_ascii=False, separators=(",", ":"), default=_json_default))
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     if a.json:
         Path(a.json).parent.mkdir(parents=True, exist_ok=True)
-        Path(a.json).write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+        Path(a.json).write_text(json.dumps(d, ensure_ascii=False, indent=1, default=_json_default), encoding="utf-8")
     print(f"site: {out} ({len(html)//1024} kB) – {len(d['mps'])} MPs, {d['meta']['votes']} votes, {len(d['key'])} key votes")
 
 
