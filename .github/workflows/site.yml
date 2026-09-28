@@ -2,8 +2,8 @@
 name: refresh-and-publish
 on:
   schedule:
-    - cron: "15 3 * * *"        # every morning (≈ 06:15 Finnish time)
-    - cron: "30 17 * * 2-5"     # plenary days Tue–Fri, after the afternoon votes
+    - cron: "15 3 * * *"        # every morning (about 06:15 Finnish time)
+    - cron: "30 17 * * 2-5"     # plenary days Tue-Fri, after the afternoon votes
   workflow_dispatch: {}          # "Run workflow" button
   push:
     branches: [main]
@@ -31,7 +31,8 @@ jobs:
           key: raw-${{ github.run_id }}
           restore-keys: raw-
       - name: Collect data from Eduskunta
-        run: python run.py --user-agent "DataBasedVoting2027/1.0 (contact: ${{ vars.CONTACT_EMAIL }})"
+        run: |
+          python run.py --user-agent "DataBasedVoting2027/1.0 (contact: ${{ vars.CONTACT_EMAIL }})"
       - name: Build site
         run: python site/build_site.py --data data --out public/index.html --json site-data/latest.json
       - name: Commit data snapshot if it changed
