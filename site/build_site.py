@@ -17,6 +17,7 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 TERM_START = "2023-04-05"
 KEY_VOTE_RE = re.compile(r"^Luottamuslause valtioneuvostolle", re.I)
+MIN_GROUP_VOTES = 50   # groups with fewer votes (e.g. short-lived) are left out of group charts
 
 
 def _read(tables: Path, name: str) -> pd.DataFrame:
@@ -126,8 +127,9 @@ def build(data_dir: Path) -> dict:
                         v="".join(m.get(i, "-") for i in order)))
 
     # groups
-    coh = pos.groupby("party_abbr").agg(mean=("c", "mean"), unan=("c", lambda s: (s == 1).mean()), n=("c", "size"))
-    coh = [[p, round(100 * r_.mean, 1), round(100 * r_.unan, 1), int(r_.n)] for p, r_ in coh.iterrows() if r_.n > 50]
+    grp = pos.groupby("party_abbr").agg(c_mean=("c", "mean"), c_unan=("c", lambda s: (s == 1).mean()), c_n=("c", "size"))
+    coh = [[p, round(100 * float(r_.c_mean), 1), round(100 * float(r_.c_unan), 1), int(r_.c_n)]
+           for p, r_ in zip(grp.index, grp.itertuples()) if r_.c_n > MIN_GROUP_VOTES]
     wide = pos.dropna(subset=["maj"]).pivot(index="vote_id", columns="party_abbr", values="maj")
     agree = []
     for a in [c[0] for c in coh]:
