@@ -157,6 +157,32 @@ def _json_default(o):
     raise TypeError(f"Cannot put {type(o).__name__} into site data: {str(o)[:200]}")
 
 
+def _css() -> str:
+    tpl = (HERE / "template.html").read_text(encoding="utf-8")
+    return tpl[tpl.index("<style>") + 7: tpl.index("</style>")]
+
+
+def build_extra_pages(data_dir: Path, out_dir: Path, json_dir: Path | None = None) -> dict:
+    """The scorecard (tuloskortti.html) and the explanation page (mittaristo.html)."""
+    import sys
+    sys.path.insert(0, str(HERE.parent))
+    from edk import scorecard
+    sc = scorecard.build(data_dir, HERE / "fees.json", TERM_START)
+    kpi = (HERE / "kpi_defs.js").read_text(encoding="utf-8")
+    css = _css()
+    dump = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":"), default=_json_default).replace("</", "<\\/")
+    card = (HERE / "scorecard.html").read_text(encoding="utf-8")
+    card = card.replace("__CSS__", css).replace("__KPI__", kpi).replace("__DATA__", dump(sc))
+    method = (HERE / "method.html").read_text(encoding="utf-8")
+    method = method.replace("__CSS__", css).replace("__KPI__", kpi).replace("__FEES__", dump({"feeSources": sc["meta"]["feeSources"], "ministerRule": sc["meta"]["ministerRule"]}))
+    (out_dir / "tuloskortti.html").write_text(card, encoding="utf-8")
+    (out_dir / "mittaristo.html").write_text(method, encoding="utf-8")
+    if json_dir:
+        json_dir.mkdir(parents=True, exist_ok=True)
+        (json_dir / "scorecard.json").write_text(json.dumps(sc, ensure_ascii=False, indent=1, default=_json_default), encoding="utf-8")
+    return sc
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default="data")
@@ -173,6 +199,8 @@ def main() -> None:
         Path(a.json).parent.mkdir(parents=True, exist_ok=True)
         Path(a.json).write_text(json.dumps(d, ensure_ascii=False, indent=1, default=_json_default), encoding="utf-8")
     print(f"site: {out} ({len(html)//1024} kB) – {len(d['mps'])} MPs, {d['meta']['votes']} votes, {len(d['key'])} key votes")
+    sc = build_extra_pages(Path(a.data), out.parent, Path(a.json).parent if a.json else None)
+    print(f"scorecard: {len(sc['mps'])} MPs, {len(sc['groups'])} groups, {len(sc['committees'])} committees")
 
 
 if __name__ == "__main__":

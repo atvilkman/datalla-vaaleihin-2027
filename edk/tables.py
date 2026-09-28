@@ -176,6 +176,9 @@ def build_matters(raw: Path) -> dict[str, pd.DataFrame]:
         m = unwrap(m, "valtiopaivaasia")
         first = m.get("ensimmainenAllekirjoittaja")
         ids = _person_ids(first)
+        fs = first.get(config.LANG) or first.get("fi") if isinstance(first, dict) else first
+        fs = fs[0] if isinstance(fs, list) and fs else (fs if isinstance(fs, dict) else {})
+        fs_name = f"{fs.get('etunimi', '')} {fs.get('sukunimi', '')}".strip() if fs else ""
         rows.append({
             "matter_id": m.get("eduskuntatunnus"), "type": txt(m.get("asiakirjatyyppinimi")),
             "type_code": m.get("asiakirjatyyppikoodi"), "title": txt(m.get("nimeke")),
@@ -183,6 +186,7 @@ def build_matters(raw: Path) -> dict[str, pd.DataFrame]:
             "latest_stage": txt(m.get("viimeisinKasittelyvaihe")),
             "created": m.get("laadintapvm"), "closed": m.get("paattymispvm"),
             "first_signer_ids": "; ".join(ids),
+            "first_signer_name": fs_name, "first_signer_party": (fs or {}).get("eduskuntaryhma"),
             "first_signer_raw": json.dumps(first, ensure_ascii=False) if first else None,
             "other_signers": m.get("muidenAllekirjoittajienLkm"),
             "session_year": m.get("valtiopaivavuosi"),
@@ -239,7 +243,7 @@ def build_mps(raw: Path) -> dict[str, pd.DataFrame]:
         })
         terms += _periods(m.get("edustajatoimet"), mp_id)
         parties += _periods(m.get("eduskuntaryhmat"), mp_id, lambda x: {"party": loc(x.get("nimi")), "party_code": x.get("tunnus")})
-        commit += _periods(m.get("valiokuntajasenyydet"), mp_id, _flat)
+        commit += [dict(r, body_type="committee") for r in _periods(m.get("valiokuntajasenyydet"), mp_id, _flat)]
         commit += [dict(r, body_type="other_body") for r in _periods(m.get("toimielinjasenyydet"), mp_id, _flat)]
         minister += _periods(m.get("valtioneuvostonJasenyydet"), mp_id, _flat)
         breaks += _periods(m.get("edustajatoimiKeskeytynyt"), mp_id, _flat)
@@ -328,6 +332,11 @@ def build_all(raw: Path) -> dict[str, pd.DataFrame]:
     for key in ("rollcall_absences", "rollcall_late_arrivals"):
         if key in tables and not tables[key].empty:
             tables[key] = attach_ids(tables[key], "name", idx, key)
+    mt = tables.get("matters")
+    if mt is not None and not mt.empty and "first_signer_name" in mt:
+        mt["first_signer_mp_id"] = mt.first_signer_name.map(lambda s: idx.get(parsers.norm_name(str(s))) if s else None)
+        # prefer an id found in the record itself
+        mt["first_signer_mp_id"] = mt.first_signer_ids.where(mt.first_signer_ids.fillna("") != "", mt.first_signer_mp_id)
     tables.update(build_official(raw, mps))
     # reference tables
     for f in sorted((raw / "reference").glob("*.json")):

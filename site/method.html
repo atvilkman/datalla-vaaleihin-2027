@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Näin mittaristo toimii – Datalla vaaleihin 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+__CSS__
+.doc{max-width:860px;padding:40px 0 20px}
+.doc h1{margin-bottom:14px}
+.doc h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin:44px 0 10px;line-height:1.1}
+.doc h3{font-size:19px;margin:0 0 6px}
+.doc p,.doc li{max-width:44em}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:12px 0;scroll-margin-top:16px}
+.card dl{display:grid;grid-template-columns:190px minmax(0,1fr);gap:6px 16px;margin:10px 0 0;font-size:15px}
+.card dt{font-weight:600;color:var(--muted)}.card dd{margin:0}
+@media (max-width:620px){.card dl{grid-template-columns:1fr}.card dt{margin-top:6px}}
+.mk{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:6px}
+.mk-fact{background:var(--ink)}.mk-calc{background:linear-gradient(90deg,var(--ink) 50%,transparent 50%);box-shadow:inset 0 0 0 2px var(--ink)}.mk-coming{box-shadow:inset 0 0 0 2px var(--muted)}
+.tbl{border-collapse:collapse;width:100%;font-size:15px;min-width:0}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+.tbl th{font-size:13px;color:var(--muted)}
+.secname{font-size:13px;font-weight:600;color:var(--muted);margin:26px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span data-t="brand"></span></div>
+    <nav>
+      <a href="index.html" data-t="navHome"></a>
+      <a href="tuloskortti.html" data-t="navCard"></a>
+      <a href="mittaristo.html" aria-current="page" data-t="navMethod"></a>
+      <span class="lang" role="group" aria-label="Kieli / Language"><button type="button" data-lang="fi" aria-pressed="true">FI</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    </nav>
+  </header>
+  <main class="doc" id="doc"></main>
+  <footer data-t-html="footer"></footer>
+</div>
+<script>
+__KPI__
+const FEES = __FEES__;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const T = {
+fi:{brand:"Datalla vaaleihin 2027",navHome:"Etusivu",navCard:"Tuloskortti",navMethod:"Näin mittaristo toimii",
+ footer:"Lähde: Eduskunta, avoin data (CC BY 4.0). Datalla vaaleihin 2027 on puolueeton tietopalvelu, eikä se ota kantaa puolueisiin tai ehdokkaisiin. Sivusto ei käytä evästeitä eikä kävijäseurantaa.",
+ html:`<h1>Näin mittaristo toimii</h1>
+<p class="lede">Tällä sivulla kerrotaan, mitä tuloskortin luvut tarkoittavat, miten ne lasketaan ja mitä ne eivät kerro.</p>
+<nav class="toc" aria-label="Sisältö"><a class="chip" href="#why">Miksi</a><a class="chip" href="#read">Lukuohje</a><a class="chip" href="#sections">Kuusi näkökulmaa</a><a class="chip" href="#measures">Mittarit</a><a class="chip" href="#compare">Vertailu</a><a class="chip" href="#lists">Eniten ja vähiten</a><a class="chip" href="#costs">Kustannukset</a><a class="chip" href="#not">Mitä emme näytä</a><a class="chip" href="#company">Jos eduskunta olisi yritys</a><a class="chip" href="#sources">Lähteet ja virheet</a></nav>
+<h2 id="why">Miksi tuloskortti</h2>
+<p>Kansanedustajilla ei ole virallisia suoritusmittareita. He vastaavat työstään äänestäjille, ja tärkein arvio tehdään vaaleissa neljän vuoden välein. Media ja tutkijat seuraavat silti esimerkiksi poissaoloja, puheenvuoroja ja aloitteita. Tuloskortti kokoaa nämä tiedot yhteen, laskee ne kaikille samalla tavalla ja kertoo aina myös, mitä luku ei kerro.</p>
+<p><b>Tämä on:</b> eduskunnan omiin tietoihin perustuvia lukuja ja julkaistuista säännöistä laskettuja palkkioita. <b>Tämä ei ole:</b> virallinen arvio, paremmuusjärjestys tai mittari työn laadusta. Suuri osa edustajan työstä, kuten tapaamiset, valmistelu ja vaalipiirityö, ei näy missään tilastossa.</p>
+<h2 id="read">Lukuohje</h2>
+<p><b>Tasot.</b> Samat mittarit näytetään kuudella tasolla: koko eduskunta, hallitus ja oppositio, eduskuntaryhmä, valiokunta, vaalipiiri ja yksittäinen edustaja. Eduskuntaryhmä on yhden puolueen edustajat. Valiokunta on eri ryhmien edustajista koottu työryhmä, jossa suurin osa lainvalmistelusta tehdään.</p>
+<p><b>Merkinnät.</b> <i class="mk mk-fact"></i>Fakta: suoraan eduskunnan avoimesta datasta. <i class="mk mk-calc"></i>Laskettu: julkaistuista säännöistä laskettu, ei maksettu summa. <i class="mk mk-coming"></i>Tulossa: tieto lisätään myöhemmin.</p>
+<p><b>Vertailu.</b> Jokaisen luvun vieressä näkyy koko eduskunnan luku ja edustajien mediaani eli keskimmäinen arvo.</p>`,
+ sectionsH:"Kuusi näkökulmaa", measuresH:"Mittarit yksi kerrallaan",
+ f_short:"Yhdellä lauseella",f_calc:"Näin se lasketaan",f_tells:"Mitä se kertoo",f_not:"Mitä se ei kerro",f_watch:"Huomioi",f_status:"Lähde",f_rank:"Eniten ja vähiten -listat",f_cost:"Yhteys palkkioon",
+ st_fact:"Fakta: eduskunnan avoin data",st_calc:"Laskettu julkaistuista säännöistä",st_coming:"Tulossa",
+ rank_yes:"Kyllä",rank_no:"Ei",rank_group:"Vain ryhmät",
+ cost_strip:"Tämän näkökulman yhteydessä näytetään laskennalliset palkkiot, koska säännöt kytkevät ne toisiinsa.",cost_none:"Palkkio ei ole sidoksissa tähän mittariin.",cost_self:"Tämä on kustannusmittari.",
+ html2:`<h2 id="compare">Näin vertailu toimii</h2>
+<p><b>1. Kaikki suhteutetaan aikaan edustajana:</b> äänestyksiin, nimenhuutoihin, valiokuntien kokouksiin tai kuukausiin. Vuoden edustajana ollut on näin vertailukelpoinen neljä vuotta olleen kanssa.</p>
+<p><b>2. Ensin lasketaan yhteen, sitten jaetaan.</b> Ryhmän luku on jäsenten tapahtumien summa jaettuna jäsenten mahdollisuuksien summalla, ei prosenttien keskiarvo. Sama kaava toimii edustajalle, ryhmälle, vaalipiirille, valiokunnalle ja koko eduskunnalle.</p>
+<p><b>3. Mediaani näkyy aina summan rinnalla,</b> jotta yksittäinen poikkeus ei vääristä kuvaa.</p>
+<p><b>Tehtävät huomioidaan.</b> Mittari lasketaan vain siltä ajalta, jolloin se koskee henkilöä. Ministerin ministerikuukausia ei esimerkiksi lasketa kysymysten määrään, koska ministeri ei kysy omalta hallitukseltaan. Puhemies ei äänestä, joten äänestysmittarit eivät koske häntä.</p>
+<h2 id="lists">Eniten ja vähiten</h2>
+<p>Listat näyttävät viisi suurinta ja pienintä arvoa. Tasatilanteessa näytetään kaikki. Sanomme "eniten" ja "vähiten", emme "paras" tai "huonoin", koska monessa mittarissa suurempi arvo ei ole parempi eikä huonompi.</p>
+<p>Listoilla ovat mukana vain ne, joita mittari koskee ja jotka ovat olleet edustajina vähintään 6 kuukautta (äänestysmittareissa vähintään 500 äänestystä). Ministerit ja puhemies ovat mukana niissä mittareissa, jotka koskevat heitä, ja heidän tehtävänsä näkyy listalla.</p>
+<h2 id="costs">Kustannukset</h2>
+<p>Kansanedustajan palkkio riippuu eduskuntavuosista ja tehtävistä. Palkkio ja kulukorvaus maksetaan koko edustajakauden ajalta, eivätkä poissaolot pienennä niitä. Eduskunta voi puhemiesneuvoston ehdotuksesta päättää, että edustaja menettää palkkionsa määräajaksi, jos hän toistuvasti jättää osallistumatta eduskuntatyöhön ilman hyväksyttävää syytä. Näin ei ole tähän mennessä tehty.</p>
+<p>Tuloskortin palkkiot on laskettu jokaiselle edustajapäivälle sinä päivänä voimassa olleilla säännöillä. Ne eivät ole maksettuja summia. Matka- ja avustajakuluja ei julkaista edustajittain, joten ne eivät ole mukana. Kulukorvaus näytetään vaihteluvälinä, koska sen taso riippuu asumisselvityksestä, jota ei julkaista.</p>`,
+ feesH:"Laskennassa käytetyt määrät", feeFrom:"Alkaen", feeVer:"Vahvistettu", feeSrc:"Lähde", yes:"kyllä", no:"ei vielä",
+ html3:`<h2 id="not">Mitä emme näytä</h2>
+<ul><li><b>Yhteispisteitä tai kokonaisjärjestystä.</b> Ne kätkisivät eri tehtävien erot.</li><li><b>Hintaa äänestystä, puhetta tai poissaoloa kohden.</b> Palkkio ei ole sidoksissa niihin, joten luku antaisi väärän kuvan.</li><li><b>Mediajulkisuutta.</b> Se mittaa enemmän mediaa kuin edustajaa.</li><li><b>Avustajien nimiä tai palkkoja.</b> He ovat eduskunnan työntekijöitä, eivät valittuja päättäjiä.</li></ul>
+<h2 id="company">Jos eduskunta olisi yritys</h2>
+<p>Vertaus auttaa ymmärtämään rakennetta, mutta sillä on rajansa. Eduskunta on kuin matriisiorganisaatio:</p>
+<div class="tablewrap"><table class="tbl"><thead><tr><th>Eduskunnassa</th><th>Yrityksessä</th><th>Mittarit tuloskortissa</th></tr></thead><tbody>
+<tr><td>Eduskunta</td><td>Yritys</td><td>Kokonaisluvut, mediaanit, kustannukset</td></tr>
+<tr><td>Hallitus ja oppositio</td><td>Kaksi divisioonaa</td><td>Yhtenäisyys, luottamusäänestykset</td></tr>
+<tr><td>Eduskuntaryhmä</td><td>Liiketoimintayksikkö</td><td>Läsnäolo, äänestyslinja, panos, kustannukset</td></tr>
+<tr><td>Valiokunta</td><td>Asiantuntijatoiminto</td><td>Jäsenet, puheenjohtajat, läsnäolo kokouksissa</td></tr>
+<tr><td>Vaalipiiri</td><td>Alueellinen markkina</td><td>Alueen edustajat rinnakkain</td></tr>
+<tr><td>Edustaja</td><td>Yksilö</td><td>Koko tuloskortti</td></tr></tbody></table></div>
+<p><b>Tavoitteet</b> ovat vaaliohjelmat ja hallitusohjelma. <b>Mittaaminen</b> on tämä tuloskortti. <b>Seuraukset</b> ovat vaalit, puolueiden ehdokasvalinnat ja ääritapauksessa palkkion pidättäminen.</p>
+<p><b>Missä vertaus ontuu:</b> edustajalla ei ole esihenkilöä. Hänen "hallituksensa" ovat äänestäjät, jotka kokoontuvat neljän vuoden välein. Eri tehtävissä toimivilla on eri työ: ministeriä, valiokunnan puheenjohtajaa ja opposition rivikansanedustajaa ei voi mitata samalla tavoitteella. Siksi tehtävä näkyy aina lukujen vieressä.</p>
+<h2 id="sources">Lähteet, päivitys ja virheet</h2>
+<p>Tiedot tulevat eduskunnan avoimesta rajapinnasta (api.eduskunta.fi): täysistuntojen äänestykset, nimenhuutoraportit, puheenvuorot, valtiopäiväasiat ja edustajien tiedot, sekä eduskunnan virallisista poissaolotilastoista. Palkkiosäännöt ovat eduskunnan verkkosivuilta. Tiedot päivitetään joka aamu ja täysistuntopäivinä iltapäivällä.</p>
+<p>Jos huomaat virheen, ilmoita siitä. Jokainen luku on jäljitettävissä eduskunnan alkuperäiseen asiakirjaan, ja jokaisen päivityksen luvut tallennetaan.</p>`},
+en:{brand:"Data-based voting 2027",navHome:"Home",navCard:"Scorecard",navMethod:"How the scorecard works",
+ footer:"Source: Parliament of Finland, open data (CC BY 4.0). Data-based voting 2027 is a non-partisan information service and does not endorse any party or candidate. The site uses no cookies or visitor tracking.",
+ html:`<h1>How the scorecard works</h1>
+<p class="lede">What the scorecard's figures mean, how they are calculated and what they don't tell you.</p>
+<nav class="toc" aria-label="Contents"><a class="chip" href="#why">Why</a><a class="chip" href="#read">How to read</a><a class="chip" href="#sections">Six sections</a><a class="chip" href="#measures">Measures</a><a class="chip" href="#compare">Comparisons</a><a class="chip" href="#lists">Highest and lowest</a><a class="chip" href="#costs">Costs</a><a class="chip" href="#not">What we don't show</a><a class="chip" href="#company">If Parliament were a company</a><a class="chip" href="#sources">Sources and errors</a></nav>
+<h2 id="why">Why a scorecard</h2>
+<p>MPs have no official performance measures. They answer to voters, and the main judgement happens at elections every four years. The media and researchers still follow absences, speeches and motions. The scorecard brings this information together, calculates it the same way for everyone, and always says what a figure does not tell you.</p>
+<p><b>This is:</b> figures from Parliament's own records and fees calculated from the published rules. <b>This isn't:</b> an official evaluation, a ranking, or a measure of the quality of work. Much of an MP's work, such as meetings, preparation and district work, is not recorded anywhere.</p>
+<h2 id="read">How to read it</h2>
+<p><b>Levels.</b> The same measures are shown at six levels: all of Parliament, government and opposition, parliamentary group, committee, electoral district and individual MP. A parliamentary group is one party's MPs. A committee is a cross-party working body where most lawmaking happens.</p>
+<p><b>Markers.</b> <i class="mk mk-fact"></i>Fact: straight from Parliament's open data. <i class="mk mk-calc"></i>Calculated: from the published rules, not an amount paid. <i class="mk mk-coming"></i>Coming: added later.</p>
+<p><b>Comparison.</b> Each figure is shown with the figure for all of Parliament and the median MP.</p>`,
+ sectionsH:"Six sections", measuresH:"Measure by measure",
+ f_short:"In one sentence",f_calc:"How it's calculated",f_tells:"What it tells you",f_not:"What it doesn't tell you",f_watch:"Watch out for",f_status:"Source",f_rank:"Highest and lowest lists",f_cost:"Link to pay",
+ st_fact:"Fact: Parliament's open data",st_calc:"Calculated from published rules",st_coming:"Coming",
+ rank_yes:"Yes",rank_no:"No",rank_group:"Groups only",
+ cost_strip:"Calculated fees are shown with this section, because the rules link them.",cost_none:"Pay is not linked to this measure.",cost_self:"This is a cost measure.",
+ html2:`<h2 id="compare">How comparisons work</h2>
+<p><b>1. Everything is relative to time in office:</b> per vote, per roll call, per committee meeting or per month. Someone who served one year compares fairly with someone who served four.</p>
+<p><b>2. Totals are added up before dividing.</b> A group's figure is the sum of its members' counts divided by the sum of their opportunities, not an average of percentages. The same formula works for an MP, a group, a district, a committee and all of Parliament.</p>
+<p><b>3. The median is always shown beside the total,</b> so one extreme case does not distort the picture.</p>
+<p><b>Roles are taken into account.</b> A measure only counts the time during which it applies. For example, a minister's months in government are not counted for questions, since ministers don't question their own government. The Speaker does not vote, so voting measures don't apply to the Speaker.</p>
+<h2 id="lists">Highest and lowest</h2>
+<p>The lists show the five highest and lowest values; ties are all shown. We say "highest" and "lowest", not "best" or "worst", because for many measures a higher value is neither better nor worse.</p>
+<p>Lists include only those the measure applies to and who were in office at least 6 months (at least 500 votes for voting measures). Ministers and the Speaker are included in the measures that apply to them, with their role shown.</p>
+<h2 id="costs">Costs</h2>
+<p>An MP's fee depends on years as an MP and on roles. The fee and allowance are paid for the whole time in office, and absences don't reduce them. On the Speaker's Council's proposal, Parliament can decide that an MP loses their fee for a set period if they repeatedly fail to take part in parliamentary work without an acceptable reason. This has not been done to date.</p>
+<p>The scorecard calculates fees for each day in office using the rules in force that day. They are not amounts paid. Travel and assistant costs are not published per MP, so they are not included. The expense allowance is shown as a range, because its level depends on a housing declaration that is not published.</p>`,
+ feesH:"Amounts used in the calculation", feeFrom:"From", feeVer:"Confirmed", feeSrc:"Source", yes:"yes", no:"not yet",
+ html3:`<h2 id="not">What we don't show</h2>
+<ul><li><b>Combined scores or an overall ranking.</b> They would hide the differences between roles.</li><li><b>Cost per vote, speech or absence.</b> Pay is not linked to them, so the figure would mislead.</li><li><b>Media visibility.</b> It measures the media more than the MP.</li><li><b>Assistants' names or pay.</b> They are Parliament's employees, not elected officials.</li></ul>
+<h2 id="company">If Parliament were a company</h2>
+<p>The comparison helps explain the structure, but it has limits. Parliament works like a matrix organisation:</p>
+<div class="tablewrap"><table class="tbl"><thead><tr><th>In Parliament</th><th>In a company</th><th>Measures on the scorecard</th></tr></thead><tbody>
+<tr><td>Parliament</td><td>Company</td><td>Totals, medians, costs</td></tr>
+<tr><td>Government and opposition</td><td>Two divisions</td><td>Unity, confidence votes</td></tr>
+<tr><td>Parliamentary group</td><td>Business unit</td><td>Presence, voting line, contribution, costs</td></tr>
+<tr><td>Committee</td><td>Specialist function</td><td>Members, chairs, meeting attendance</td></tr>
+<tr><td>Electoral district</td><td>Regional market</td><td>The district's MPs side by side</td></tr>
+<tr><td>MP</td><td>Individual</td><td>The full scorecard</td></tr></tbody></table></div>
+<p><b>Targets</b> are the election manifestos and the government programme. <b>Measurement</b> is this scorecard. <b>Consequences</b> are elections, parties' candidate choices and, in extreme cases, the fee being withheld.</p>
+<p><b>Where the comparison breaks down:</b> MPs have no manager. Their "board" is the voters, who meet once every four years. Different roles have different jobs: a minister, a committee chair and an opposition backbencher can't be measured against the same target. That is why the role is always shown next to the figures.</p>
+<h2 id="sources">Sources, updates and errors</h2>
+<p>Data comes from Parliament's open API (api.eduskunta.fi): plenary votes, roll-call reports, speeches, parliamentary matters and MP records, plus Parliament's official absence statistics. Fee rules come from Parliament's website. Data is updated every morning and in the afternoon on plenary days.</p>
+<p>If you spot an error, please report it. Every figure can be traced to the original parliamentary document, and the figures of every update are stored.</p>`}};
+let lang = "fi"; try{ const s = localStorage.getItem("dv27-lang"); if(s==="en"||s==="fi") lang = s; }catch(e){}
+const t = k => T[lang][k] ?? k;
+function feeTable() {
+  const names = {mp_fee: lang==="fi"?"Edustajan palkkio":"MP fee", speaker_fee: lang==="fi"?"Puhemiehistön palkkio":"Speaker's office fee", chair_supplement: lang==="fi"?"Puheenjohtajien lisäpalkkiot":"Chair supplements", minister_fee: lang==="fi"?"Ministerin palkkio":"Minister's fee", allowance: lang==="fi"?"Kulukorvaus":"Expense allowance"};
+  const rows = [];
+  for (const k in FEES.feeSources) for (const r of FEES.feeSources[k]) {
+    const amounts = Object.entries(r).filter(([x]) => !["from","verified","source"].includes(x)).map(([x, v]) => `${x}: ${Number(v).toLocaleString(lang==="fi"?"fi-FI":"en-GB")} €`).join(", ");
+    rows.push(`<tr><td>${esc(names[k])}</td><td>${esc(r.from)}</td><td>${esc(amounts)}</td><td>${esc(r.verified ? t("yes") : t("no"))}</td><td>${esc(r.source)}</td></tr>`);
+  }
+  rows.push(`<tr><td>${lang==="fi"?"Ministerin osuus edustajan palkkiosta ja kulukorvauksesta":"Minister's share of MP fee and allowance"}</td><td></td><td>50 %</td><td>${esc(FEES.ministerRule.verified ? t("yes") : t("no"))}</td><td>${esc(FEES.ministerRule.source)}</td></tr>`);
+  return `<h3 style="margin-top:22px">${esc(t("feesH"))}</h3><div class="tablewrap"><table class="tbl"><thead><tr><th></th><th>${esc(t("feeFrom"))}</th><th></th><th>${esc(t("feeVer"))}</th><th>${esc(t("feeSrc"))}</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
+}
+function render() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el => el.textContent = t(el.dataset.t));
+  document.querySelectorAll("[data-t-html]").forEach(el => el.innerHTML = t(el.dataset.tHtml));
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  const secs = `<h2 id="sections">${esc(t("sectionsH"))}</h2>` + SECTIONS.map(s => `<p><b>${esc(s[lang])}.</b> ${esc(lang==="fi"?s.fiT:s.enT)}</p>`).join("");
+  const cards = `<h2 id="measures">${esc(t("measuresH"))}</h2>` + SECTIONS.map(s => `<p class="secname">${esc(s[lang])}</p>` + KPIS.filter(k => k.sec === s.id).map(k => {
+    const x = k[lang] || k.fi;
+    const rows = [[t("f_short"), x.short], [t("f_calc"), x.calc], [t("f_tells"), x.tells], [t("f_not"), x.notTells], [t("f_watch"), x.watch],
+      [t("f_status"), `<i class="mk mk-${k.status}"></i>${esc(t("st_" + k.status))}`],
+      [t("f_rank"), k.status === "coming" ? "–" : (k.groupOnly ? t("rank_group") : (k.rank ? t("rank_yes") : t("rank_no")))],
+      [t("f_cost"), t(k.costLink === "strip" ? "cost_strip" : k.costLink === "self" ? "cost_self" : "cost_none")]].filter(r => r[1]);
+    return `<article class="card" id="kpi-${k.id}"><h3>${esc(x.name)}</h3><dl>${rows.map(([a, b]) => `<dt>${esc(a)}</dt><dd>${a === t("f_status") ? b : esc(b)}</dd>`).join("")}</dl></article>`;
+  }).join("")).join("");
+  $("#doc").innerHTML = t("html") + secs + cards + t("html2") + feeTable() + t("html3");
+  if (location.hash) { const el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => { lang = b.dataset.lang; try{ localStorage.setItem("dv27-lang", lang); }catch(e){} render(); }));
+render();
+</script>
+</body>
+</html>

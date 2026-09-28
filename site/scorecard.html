@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vaalikauden tuloskortti 2023–2027 – Datalla vaaleihin 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+__CSS__
+.intro{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:36px;padding:40px 0 20px;align-items:start}
+@media (max-width:900px){.intro{grid-template-columns:1fr;gap:18px}}
+.disc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:14px}
+.disc p{margin:0 0 8px}.disc p:last-child{margin:0}
+.markers{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);margin-top:14px}
+.mk{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:6px}
+.mk-fact{background:var(--ink)}.mk-calc{background:linear-gradient(90deg,var(--ink) 50%,transparent 50%);box-shadow:inset 0 0 0 2px var(--ink)}.mk-coming{box-shadow:inset 0 0 0 2px var(--muted)}
+.levels{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.levelbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.ent-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;flex-wrap:wrap;margin:6px 0 18px}
+.ent-head h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.025em;line-height:1.05;margin:0;font-weight:800}
+.ent-meta{color:var(--muted);font-size:15px;margin-top:6px}
+.grid6{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.grid6{grid-template-columns:1fr}}
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:6px}
+.sec h3{margin:0;font-size:21px;letter-spacing:-.015em}
+.sec .sd{font-size:13px;color:var(--muted);margin:0 0 6px}
+.kpi{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;padding:10px 0;border-top:1px solid var(--line);align-items:baseline}
+.kpi .kn{font-weight:600;font-size:15px}.kpi .kn a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--muted)}
+.kpi .kv{font-weight:800;font-size:22px;letter-spacing:-.01em;text-align:right;white-space:nowrap}
+.kpi .kc{grid-column:1/-1;font-size:13px;color:var(--muted)}
+.kpi.na .kv{color:var(--muted);font-weight:600;font-size:15px}
+.cost{margin-top:8px;background:var(--soft);border-radius:10px;padding:10px 12px;font-size:13px}
+.cost b{font-weight:600}
+.parts{display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:14px;margin-top:4px}
+.parts span:nth-child(even){text-align:right;font-variant-numeric:tabular-nums}
+.ranks{padding:44px 0;border-top:1px solid var(--line);margin-top:36px}
+.ranks h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.025em;margin:0 0 8px}
+.rk-ctrl{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:flex-end;margin:14px 0 18px}
+.rk-ctrl label{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+.rk-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.rk-cols{grid-template-columns:1fr}}
+.rk{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.rk h3{margin:0 0 8px;font-size:17px}
+.rk ol{margin:0;padding:0;list-style:none}
+.rk li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;padding:9px 0;border-top:1px solid var(--line);align-items:baseline}
+.rk li:first-child{border-top:0}
+.rk .pos{color:var(--muted);font-size:13px}.rk .nm{font-weight:600}.rk .ctx{font-size:12px;color:var(--muted);display:block;font-weight:400}
+.rk .val{font-weight:700;white-space:nowrap}
+.rk-note{font-size:13px;color:var(--muted);margin-top:10px}
+.linkbtn{background:none;border:0;padding:0;color:var(--ink);font:inherit;font-weight:600;cursor:pointer;text-align:left}
+.linkbtn:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span data-t="brand"></span></div>
+    <nav>
+      <a href="index.html" data-t="navHome"></a>
+      <a href="tuloskortti.html" aria-current="page" data-t="navCard"></a>
+      <a href="mittaristo.html" data-t="navMethod"></a>
+      <span class="lang" role="group" aria-label="Kieli / Language"><button type="button" data-lang="fi" aria-pressed="true">FI</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    </nav>
+  </header>
+
+  <div class="intro">
+    <div>
+      <h1 data-t="h1"></h1>
+      <p class="lede" data-t="lede"></p>
+      <div class="markers">
+        <span><i class="mk mk-fact"></i><span data-t="mkFact"></span></span>
+        <span><i class="mk mk-calc"></i><span data-t="mkCalc"></span></span>
+        <span><i class="mk mk-coming"></i><span data-t="mkComing"></span></span>
+      </div>
+    </div>
+    <aside class="disc" aria-labelledby="discH">
+      <p id="discH"><b data-t="discH"></b></p>
+      <p data-t-html="discIs"></p>
+      <p data-t-html="discNot"></p>
+      <p><a href="mittaristo.html" data-t="discMore"></a></p>
+    </aside>
+  </div>
+
+  <section aria-labelledby="levelH">
+    <h2 id="levelH" class="visually-hidden" data-t="levelH" style="position:absolute;left:-9999px"></h2>
+    <div class="levels" id="levels" role="group"></div>
+    <div class="levelbar"><select id="entity" aria-label="Valinta"></select></div>
+    <div class="ent-head"><div><h2 id="entName"></h2><div class="ent-meta" id="entMeta"></div></div><div class="stamp" id="stamp"></div></div>
+    <div class="grid6" id="grid"></div>
+  </section>
+
+  <section class="ranks" aria-labelledby="rkH">
+    <h2 id="rkH" data-t="rkH"></h2>
+    <p class="intro-p" style="color:var(--muted);max-width:46em;margin:0" data-t="rkIntro"></p>
+    <div class="rk-ctrl">
+      <label><span data-t="rkKpi"></span><select id="rkKpi"></select></label>
+      <label><span data-t="rkCompare"></span><select id="rkType"></select></label>
+      <label id="rkScopeL"><span data-t="rkScope"></span><select id="rkScope"></select></label>
+    </div>
+    <div class="rk-cols"><div class="rk"><h3 data-t="rkHigh"></h3><ol id="rkHigh"></ol></div><div class="rk"><h3 data-t="rkLow"></h3><ol id="rkLow"></ol></div></div>
+    <p class="rk-note" id="rkNote"></p>
+  </section>
+
+  <footer data-t-html="footer"></footer>
+</div>
+
+<script>
+__KPI__
+const D = __DATA__;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const DIST = {"Helsingin":"Helsinki","Uudenmaan":"Uusimaa","Varsinais-Suomen":"Varsinais-Suomi","Satakunnan":"Satakunta","Ahvenanmaan":"Ahvenanmaa","Hämeen":"Häme","Pirkanmaan":"Pirkanmaa","Kaakkois-Suomen":"Kaakkois-Suomi","Savo-Karjalan":"Savo-Karjala","Vaasan":"Vaasa","Keski-Suomen":"Keski-Suomi","Oulun":"Oulu","Lapin":"Lappi"};
+const PARTY = {kok:{fi:"Kokoomus",en:"National Coalition"},ps:{fi:"Perussuomalaiset",en:"Finns Party"},sd:{fi:"SDP",en:"Social Democrats"},kesk:{fi:"Keskusta",en:"Centre"},vihr:{fi:"Vihreät",en:"Greens"},vas:{fi:"Vasemmistoliitto",en:"Left Alliance"},r:{fi:"RKP",en:"Swedish People's Party"},kd:{fi:"Kristillisdemokraatit",en:"Christian Democrats"},liik:{fi:"Liike Nyt",en:"Movement Now"}};
+const T = {
+fi:{brand:"Datalla vaaleihin 2027",navHome:"Etusivu",navCard:"Tuloskortti",navMethod:"Näin mittaristo toimii",
+ h1:"Vaalikauden tuloskortti 2023–2027",
+ lede:"Sama mittaristo koko eduskunnalle, hallitukselle ja oppositiolle, ryhmille, valiokunnille, vaalipiireille ja jokaiselle edustajalle. Luvut on suhteutettu aikaan edustajana, joten ne ovat vertailukelpoisia.",
+ mkFact:"Fakta: eduskunnan avoin data",mkCalc:"Laskettu julkaistuista säännöistä",mkComing:"Tulossa",
+ discH:"Mitä tämä on ja mitä ei",
+ discIs:"<b>On:</b> eduskunnan omiin tietoihin perustuvia lukuja ja julkaistuista säännöistä laskettuja palkkioita, esitettynä kaikille samalla tavalla.",
+ discNot:"<b>Ei ole:</b> virallinen arvio, paremmuusjärjestys tai mittari työn laadusta. Suuri osa edustajan työstä, kuten tapaamiset, valmistelu ja vaalipiirityö, ei näy missään tilastossa. Kustannukset eivät ole maksettuja summia.",
+ discMore:"Lue, miten mittarit lasketaan",levelH:"Taso",
+ lv_parl:"Eduskunta",lv_bloc:"Hallitus ja oppositio",lv_group:"Eduskuntaryhmä",lv_com:"Valiokunta",lv_dist:"Vaalipiiri",lv_mp:"Edustaja",
+ gov:"Hallitusryhmät",opp:"Oppositioryhmät",members:"{n} edustajaa kauden aikana",
+ stamp:"Äänestykset {fv}–{lv}, nimenhuudot {lr} asti",
+ cmpParl:"Eduskunta {v}",cmpMed:"mediaani {v}",na:"Ei koske tätä tasoa",coming:"Tulossa",groupOnly:"Koskee vain ryhmiä",notApplicable:"Ei koske",
+ costNone:"Palkkio ei ole sidoksissa näihin mittareihin.",
+ costPresence:"<b>Laskennalliset palkkiot tältä ajalta: {fee}.</b> Poissaolot eivät pienennä palkkiota. Eduskunta voi pidättää palkkion toistuvista poissaoloista ilman hyväksyttävää syytä, mutta ei ole tähän mennessä tehnyt niin.",
+ costRoles:"<b>Tehtäviin liittyvät palkkiot:</b> puhemiehistö {sp}, puheenjohtajien lisäpalkkiot {ch}, ministerin palkkiot {mi}.",
+ pBase:"Edustajan palkkio",pSpeaker:"Puhemiehistön palkkio",pChair:"Valiokunnan pj:n lisäpalkkio",pGroup:"Ryhmän pj:n lisäpalkkio",pMin:"Ministerin palkkio",pTotal:"Yhteensä",pAllow:"Kulukorvaus (vaihteluväli, koko kausi)",
+ unverified:"Osa määristä on vielä vahvistamatta virallisista lähteistä.",verifiedOk:"Määrät vahvistettu virallisista lähteistä.",
+ rkH:"Eniten ja vähiten",rkIntro:"Viisi suurinta ja pienintä arvoa valitulla mittarilla. Tasatilanteessa näytetään kaikki. Mukana ovat vain ne, joihin mittari soveltuu ja joilla on riittävästi aikaa edustajana.",
+ rkKpi:"Mittari",rkCompare:"Vertaa",rkScope:"Rajaus",rkHigh:"Eniten",rkLow:"Vähiten",
+ t_mp:"Edustajat",t_group:"Eduskuntaryhmät",t_dist:"Vaalipiirit",t_com:"Valiokunnat",t_bloc:"Hallitus ja oppositio",all:"Koko eduskunta",
+ rkExcl:"{n} ei ole mukana: mittari ei koske heitä tai aika edustajana on alle 6 kuukautta (äänestysmittareissa alle 500 äänestystä).",
+ rkCost:"Palkkio määräytyy sääntöjen mukaan eduskuntavuosista ja tehtävistä, ei suorituksesta. Lista näyttää, mitä säännöt tuottavat.",
+ rkEmpty:"Ei vertailukelpoisia tuloksia tällä rajauksella.",rkTies:"ja {n} muuta samalla arvolla ({v})",
+ left:"lähti {d}",joined:"aloitti {d}",tenure:"edustajana {y} vuotta, ensimmäinen kausi {fy}",home:"kotikunta {h}",
+ footer:"Lähde: Eduskunta, avoin data (CC BY 4.0). Palkkiosäännöt: eduskunta.fi. Datalla vaaleihin 2027 on puolueeton tietopalvelu, eikä se ota kantaa puolueisiin tai ehdokkaisiin. Sivusto ei käytä evästeitä eikä kävijäseurantaa."},
+en:{brand:"Data-based voting 2027",navHome:"Home",navCard:"Scorecard",navMethod:"How the scorecard works",
+ h1:"Scorecard for the 2023–2027 term",
+ lede:"The same measures for all of Parliament, government and opposition, groups, committees, districts and every MP. Figures are adjusted for time in office, so they are comparable.",
+ mkFact:"Fact: Parliament's open data",mkCalc:"Calculated from published rules",mkComing:"Coming",
+ discH:"What this is and what it isn't",
+ discIs:"<b>It is:</b> figures from Parliament's own records and fees calculated from the published rules, presented the same way for everyone.",
+ discNot:"<b>It isn't:</b> an official evaluation, a ranking, or a measure of the quality of work. Much of an MP's work, such as meetings, preparation and district work, is not recorded anywhere. Costs are not amounts actually paid.",
+ discMore:"Read how the measures are calculated",levelH:"Level",
+ lv_parl:"Parliament",lv_bloc:"Government and opposition",lv_group:"Parliamentary group",lv_com:"Committee",lv_dist:"Electoral district",lv_mp:"MP",
+ gov:"Government groups",opp:"Opposition groups",members:"{n} MPs during the term",
+ stamp:"Votes {fv}–{lv}, roll calls up to {lr}",
+ cmpParl:"Parliament {v}",cmpMed:"median {v}",na:"Not applicable at this level",coming:"Coming",groupOnly:"Groups only",notApplicable:"Not applicable",
+ costNone:"Pay is not linked to these measures.",
+ costPresence:"<b>Calculated fees for this period: {fee}.</b> Absences don't reduce the fee. Parliament can withhold it for repeated absence without an acceptable reason, but has not done so to date.",
+ costRoles:"<b>Role-related fees:</b> Speaker's office {sp}, chair supplements {ch}, ministers' fees {mi}.",
+ pBase:"MP fee",pSpeaker:"Speaker's office fee",pChair:"Committee chair supplement",pGroup:"Group chair supplement",pMin:"Minister's fee",pTotal:"Total",pAllow:"Expense allowance (range, whole term)",
+ unverified:"Some amounts are not yet confirmed from official sources.",verifiedOk:"Amounts confirmed from official sources.",
+ rkH:"Highest and lowest",rkIntro:"The five highest and lowest values for the chosen measure. Ties are all shown. Only those the measure applies to, with enough time in office, are included.",
+ rkKpi:"Measure",rkCompare:"Compare",rkScope:"Within",rkHigh:"Highest",rkLow:"Lowest",
+ t_mp:"MPs",t_group:"Parliamentary groups",t_dist:"Electoral districts",t_com:"Committees",t_bloc:"Government and opposition",all:"All of Parliament",
+ rkExcl:"{n} not included: the measure doesn't apply to them, or they were in office under 6 months (under 500 votes for voting measures).",
+ rkCost:"Fees are set by rules based on years as an MP and roles, not performance. The list shows what the rules produce.",
+ rkEmpty:"No comparable results with this selection.",rkTies:"and {n} more with the same value ({v})",
+ left:"left {d}",joined:"joined {d}",tenure:"{y} years as an MP, first term {fy}",home:"home municipality {h}",
+ footer:"Source: Parliament of Finland, open data (CC BY 4.0). Fee rules: eduskunta.fi. Data-based voting 2027 is a non-partisan information service and does not endorse any party or candidate. The site uses no cookies or visitor tracking."}};
+let lang = "fi"; try{ const s = localStorage.getItem("dv27-lang"); if(s==="en"||s==="fi") lang = s; }catch(e){}
+const t = (k, v={}) => (T[lang][k] ?? k).replace(/\{(\w+)\}/g, (_, x) => v[x] ?? "");
+const L = o => o ? (o[lang] || o.fi) : "";
+const nf = (x, d) => x == null || isNaN(x) ? "–" : x.toLocaleString(lang === "fi" ? "fi-FI" : "en-GB", {minimumFractionDigits: d, maximumFractionDigits: d});
+const eur = x => nf(Math.round(x), 0) + " €";
+const fmtDate = d => { if(!d) return ""; const [y,m,dd] = d.split("-"); return lang==="fi" ? `${+dd}.${+m}.${y}` : `${+dd}/${+m}/${y}`; };
+function fmt(k, v) {
+  if (v == null || isNaN(v)) return "–";
+  switch (k.unit) {
+    case "%": return nf(v, 1) + " %";
+    case "/100": return nf(v, 1);
+    case "/kk": return nf(v, 2);
+    case "min/kk": return nf(v, 1);
+    case "€/kk": case "€": return eur(v);
+    case "x": return nf(v, 1);
+    default: return nf(v, 0);
+  }
+}
+const unitText = k => ({"/100": lang==="fi"?"/ 100 nimenhuutoa":"/ 100 roll calls", "/kk": lang==="fi"?"/ kk":"/ month", "min/kk": lang==="fi"?"min / kk":"min / month", "€/kk": lang==="fi"?"/ kk":"/ month", "x": ""})[k.unit] || "";
+const KN = k => (k[lang] || k.fi).name;
+const pname = p => L(PARTY[p]) || (D.groups[p] && D.groups[p].name) || p;
+const mpName = m => `${m.f} ${m.l}`;
+const MPS = D.mps;
+
+// ---------- entities
+const groupsList = Object.keys(D.groups).filter(g => MPS.filter(m => m.p === g && !m.lv).length >= 2)
+  .sort((a, b) => MPS.filter(m => m.p === b).length - MPS.filter(m => m.p === a).length);
+const distList = Object.keys(DIST).filter(d => MPS.some(m => m.d === d));
+const comList = Object.keys(D.committees).sort((a, b) => D.committees[a].name.localeCompare(D.committees[b].name, "fi"));
+const members = (level, id) => {
+  switch (level) {
+    case "parl": return MPS;
+    case "bloc": return MPS.filter(m => (D.meta.govGroups.includes(m.p) ? "gov" : "opp") === id);
+    case "group": return MPS.filter(m => m.p === id);
+    case "com": { const s = new Set(D.committees[id].members); return MPS.filter(m => s.has(m.id)); }
+    case "dist": return MPS.filter(m => m.d === id);
+    case "mp": return MPS.filter(m => m.id === id);
+  }
+  return [];
+};
+const entityName = (level, id) => ({parl: t("lv_parl"), bloc: t(id), group: pname(id), com: (D.committees[id]||{}).name, dist: DIST[id], mp: (MPS.find(m => m.id === id) ? mpName(MPS.find(m => m.id === id)) : "")})[level];
+const entities = level => ({parl: ["all"], bloc: ["gov", "opp"], group: groupsList, com: comList, dist: distList,
+  mp: [...MPS].sort((a, b) => a.l.localeCompare(b.l, "fi")).map(m => m.id)})[level];
+
+function kpiValue(k, level, id, mems) {
+  if (k.status === "coming") return {v: null, state: "coming"};
+  if (k.groupOnly) {
+    if (level === "group") return {v: D.groups[id] ? D.groups[id].unan : null};
+    if (level === "parl") { const a = groupsList.map(g => D.groups[g].unan).sort((x, y) => x - y); return {v: a.length ? a[Math.floor(a.length / 2)] : null, note: t("cmpMed", {v: ""}).trim()}; }
+    return {v: null, state: "group"};
+  }
+  if (k.id === "catt" && level === "com") {
+    const a = D.committees[id].att; return {v: a && a.meetings ? 100 * (a.meetings - a.absent) / a.meetings : null};
+  }
+  const inc = mems.filter(k.include);
+  if (!inc.length) return {v: null, state: "na"};
+  const P = pool(inc);
+  return {v: k.value(P.c), v2: k.value2 ? k.value2(P.c) : null, P};
+}
+function medianOf(k) {
+  if (k.groupOnly || k.status === "coming") return null;
+  const vals = MPS.filter(m => k.include(m) && k.rankable(m)).map(m => k.value(pool([m]).c)).filter(v => v != null && !isNaN(v)).sort((a, b) => a - b);
+  return vals.length ? vals[Math.floor(vals.length / 2)] : null;
+}
+
+// ---------- render: levels + entity
+let level = "parl", ent = "all";
+function renderLevels() {
+  $("#levels").innerHTML = ["parl","bloc","group","com","dist","mp"].map(l => `<button type="button" class="chip" data-l="${l}" aria-pressed="${l===level}">${esc(t("lv_"+l))}</button>`).join("");
+  document.querySelectorAll("#levels .chip").forEach(b => b.addEventListener("click", () => { level = b.dataset.l; ent = entities(level)[0]; renderAll(); }));
+  const sel = $("#entity");
+  sel.parentElement.style.display = level === "parl" ? "none" : "flex";
+  sel.innerHTML = entities(level).map(id => `<option value="${esc(id)}">${esc(level==="mp" ? mpName(MPS.find(m=>m.id===id)) + " (" + (MPS.find(m=>m.id===id).p) + ")" : entityName(level, id))}</option>`).join("");
+  sel.value = ent;
+}
+$("#entity").addEventListener("change", e => { ent = e.target.value; renderCard(); });
+
+function renderCard() {
+  const mems = members(level, ent);
+  $("#entName").textContent = entityName(level, ent);
+  let meta = t("members", {n: mems.length});
+  if (level === "mp" && mems[0]) {
+    const m = mems[0];
+    const bits = [pname(m.p), DIST[m.d] || m.d];
+    if (m.home) bits.push(t("home", {h: m.home}));
+    if (m.tenure) bits.push(t("tenure", {y: nf(m.tenure, 1), fy: m.first_year || "–"}));
+    if (m.roles.length) bits.push(m.roles.map(r => L(ROLE_LABEL[r])).join(", "));
+    if (m.lv) bits.push(t("left", {d: fmtDate(m.lv)}));
+    else if (m.fv > D.meta.firstVote) bits.push(t("joined", {d: fmtDate(m.fv)}));
+    meta = bits.join(" · ");
+  }
+  if (level === "com") meta += " · " + D.committees[ent].chairs.map(id => mpName(MPS.find(m => m.id === id) || {f:"",l:id})).join(", ");
+  $("#entMeta").textContent = meta;
+  $("#stamp").textContent = t("stamp", {fv: fmtDate(D.meta.firstVote), lv: fmtDate(D.meta.lastVote), lr: fmtDate(D.meta.lastRollcall)});
+
+  const P = pool(mems);
+  $("#grid").innerHTML = SECTIONS.map(sec => {
+    const rows = KPIS.filter(k => k.sec === sec.id).map(k => {
+      const r = kpiValue(k, level, ent, mems);
+      const mk = `<i class="mk mk-${k.status}" title="${esc(t(k.status==="fact"?"mkFact":k.status==="calc"?"mkCalc":"mkComing"))}"></i>`;
+      let val, cmp = "";
+      if (r.state === "coming") val = t("coming");
+      else if (r.state === "group") val = t("groupOnly");
+      else if (r.state === "na" || r.v == null) val = t("notApplicable");
+      else {
+        val = k.range ? `${fmt(k, r.v)}–${fmt(k, r.v2)}` : fmt(k, r.v);
+        if (level !== "parl" && !k.range) {
+          const pr = kpiValue(k, "parl", "all", MPS);
+          const md = medianOf(k);
+          cmp = [pr.v != null ? t("cmpParl", {v: fmt(k, pr.v)}) : "", md != null && level === "mp" ? t("cmpMed", {v: fmt(k, md)}) : ""].filter(Boolean).join(" · ");
+        } else if (level === "parl" && !k.range && !k.groupOnly) {
+          const md = medianOf(k); if (md != null) cmp = t("cmpMed", {v: fmt(k, md)});
+        }
+      }
+      const na = r.v == null || r.state;
+      return `<div class="kpi${na ? " na" : ""}"><div class="kn">${mk}<a href="mittaristo.html#kpi-${k.id}">${esc(KN(k))}</a> <span style="font-weight:400;color:var(--muted);font-size:13px">${esc(unitText(k))}</span></div><div class="kv">${esc(val)}</div>${cmp ? `<div class="kc">${esc(cmp)}</div>` : `<div class="kc">${esc((k[lang] || k.fi).short)}</div>`}</div>`;
+    }).join("");
+    let cost = "";
+    if (sec.id === "presence") cost = `<div class="cost">${t("costPresence", {fee: eur(P.c.fee)})}</div>`;
+    else if (sec.id === "roles") cost = `<div class="cost">${t("costRoles", {sp: eur(P.parts.speaker), ch: eur(P.parts.chair + P.parts.group_chair), mi: eur(P.parts.minister)})}</div>`;
+    else if (sec.id === "cost") cost = `<div class="cost"><div class="parts">
+        <span>${esc(t("pBase"))}</span><span>${eur(P.parts.base)}</span>
+        <span>${esc(t("pSpeaker"))}</span><span>${eur(P.parts.speaker)}</span>
+        <span>${esc(t("pChair"))}</span><span>${eur(P.parts.chair)}</span>
+        <span>${esc(t("pGroup"))}</span><span>${eur(P.parts.group_chair)}</span>
+        <span>${esc(t("pMin"))}</span><span>${eur(P.parts.minister)}</span>
+        <span><b>${esc(t("pTotal"))}</b></span><span><b>${eur(P.c.fee)}</b></span>
+        <span>${esc(t("pAllow"))}</span><span>${eur(P.c.feeMin)}–${eur(P.c.feeMax)}</span></div>
+        <div style="margin-top:8px">${esc(P.verified ? t("verifiedOk") : t("unverified"))} <a href="mittaristo.html#costs">${esc(t("discMore"))}</a></div></div>`;
+    else cost = `<div class="cost">${esc(t("costNone"))}</div>`;
+    return `<section class="sec" aria-labelledby="s-${sec.id}"><h3 id="s-${sec.id}">${esc(L(sec))}</h3><p class="sd">${esc(lang==="fi"?sec.fiT:sec.enT)}</p>${rows}${cost}</section>`;
+  }).join("");
+}
+
+// ---------- top / bottom
+const RANKABLE = KPIS.filter(k => k.rank && k.status !== "coming");
+function renderRankControls() {
+  const cur = $("#rkKpi").value || "unexpl";
+  $("#rkKpi").innerHTML = SECTIONS.map(s => `<optgroup label="${esc(L(s))}">${RANKABLE.filter(k => k.sec === s.id).map(k => `<option value="${k.id}">${esc(KN(k))}</option>`).join("")}</optgroup>`).join("");
+  $("#rkKpi").value = cur;
+  const k = RANKABLE.find(x => x.id === $("#rkKpi").value);
+  const types = k.groupOnly ? ["group"] : ["mp", "group", "dist", "com", "bloc"];
+  const curT = types.includes($("#rkType").value) ? $("#rkType").value : types[0];
+  $("#rkType").innerHTML = types.map(x => `<option value="${x}">${esc(t("t_" + x))}</option>`).join("");
+  $("#rkType").value = curT;
+  const scopes = [["all", t("all")], ["bloc:gov", t("gov")], ["bloc:opp", t("opp")], ...groupsList.map(g => ["group:" + g, pname(g)]),
+    ...distList.map(d => ["dist:" + d, DIST[d]]), ...comList.map(c => ["com:" + c, D.committees[c].name])];
+  const curS = $("#rkScope").value || "all";
+  $("#rkScope").innerHTML = scopes.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("");
+  $("#rkScope").value = scopes.some(s => s[0] === curS) ? curS : "all";
+  $("#rkScopeL").style.display = $("#rkType").value === "mp" ? "flex" : "none";
+}
+function top5(arr, desc) {
+  const s = [...arr].sort((a, b) => desc ? b.v - a.v : a.v - b.v);
+  if (s.length <= 5) return s;
+  const cut = s[4].vr; return s.filter((x, i) => i < 5 || x.vr === cut);
+}
+function renderRanks() {
+  const k = RANKABLE.find(x => x.id === $("#rkKpi").value); const type = $("#rkType").value;
+  let rows = [], excluded = 0;
+  if (type === "mp") {
+    const [sl, sid] = $("#rkScope").value.split(":");
+    const pool0 = sl === "all" ? MPS : members(sl, sid);
+    for (const m of pool0) {
+      if (!k.include(m) || !k.rankable(m)) { excluded++; continue; }
+      const v = k.value(pool([m]).c); if (v == null || isNaN(v)) { excluded++; continue; }
+      const ctx = [pname(m.p), DIST[m.d] || m.d, ...m.roles.map(r => L(ROLE_LABEL[r]))].join(" · ");
+      rows.push({name: mpName(m), ctx, v, vr: fmt(k, v), id: m.id});
+    }
+  } else {
+    const ids = type === "group" ? groupsList : type === "dist" ? distList : type === "com" ? comList : ["gov", "opp"];
+    for (const id of ids) {
+      const r = kpiValue(k, type, id, members(type, id));
+      if (r.v == null || isNaN(r.v)) continue;
+      rows.push({name: entityName(type, id), ctx: t("members", {n: members(type, id).length}), v: r.v, vr: fmt(k, r.v)});
+    }
+  }
+  const li = (r, i) => `<li><span class="pos">${i + 1}.</span><span>${r.id ? `<button type="button" class="linkbtn" data-mp="${esc(r.id)}">${esc(r.name)}</button>` : `<span class="nm">${esc(r.name)}</span>`}<span class="ctx">${esc(r.ctx)}</span></span><span class="val">${esc(r.vr)}</span></li>`;
+  const out = arr => {
+    if (!arr.length) return `<li>${esc(t("rkEmpty"))}</li>`;
+    if (arr.length <= 8) return arr.map(li).join("");
+    const extra = arr.length - 5;   // many ties: show five, then say how many share the same value
+    return arr.slice(0, 5).map(li).join("") + `<li><span></span><span class="ctx" style="font-size:13px">${esc(t("rkTies", {n: extra, v: arr[5].vr}))}</span><span></span></li>`;
+  };
+  const hi = top5(rows, true), lo = top5(rows, false);
+  $("#rkHigh").innerHTML = out(hi);
+  $("#rkLow").innerHTML = out(lo);
+  const notes = [];
+  if (type === "mp" && excluded) notes.push(t("rkExcl", {n: excluded}));
+  if (k.sec === "cost") notes.push(t("rkCost"));
+  notes.push((k[lang] || k.fi).notTells);
+  $("#rkNote").textContent = notes.filter(Boolean).join(" ");
+  document.querySelectorAll("#rkHigh [data-mp], #rkLow [data-mp]").forEach(b => b.addEventListener("click", () => {
+    level = "mp"; ent = b.dataset.mp; renderAll(); document.getElementById("levelH").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  }));
+}
+["#rkKpi", "#rkType", "#rkScope"].forEach(s => $(s).addEventListener("change", () => { renderRankControls(); renderRanks(); }));
+
+function renderAll() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el => el.textContent = t(el.dataset.t));
+  document.querySelectorAll("[data-t-html]").forEach(el => el.innerHTML = t(el.dataset.tHtml));
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  renderLevels(); renderCard(); renderRankControls(); renderRanks();
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => { lang = b.dataset.lang; try{ localStorage.setItem("dv27-lang", lang); }catch(e){} renderAll(); }));
+renderAll();
+</script>
+</body>
+</html>

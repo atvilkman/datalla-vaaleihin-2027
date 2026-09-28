@@ -166,6 +166,8 @@ dialog::backdrop{background:rgba(10,18,24,.55)}
       <a href="#edustajat" data-t="navMps">Edustajat</a>
       <a href="#ryhmat" data-t="navParties">Eduskuntaryhmät</a>
       <a href="#menetelma" data-t="navMethod">Näin luvut lasketaan</a>
+      <a href="tuloskortti.html" data-t="navCard">Tuloskortti</a>
+      <a href="mittaristo.html" data-t="navScore">Näin mittaristo toimii</a>
       <span class="lang" role="group" aria-label="Kieli / Language"><button type="button" data-lang="fi" aria-pressed="true">FI</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
     </nav>
   </header>
@@ -178,6 +180,7 @@ dialog::backdrop{background:rgba(10,18,24,.55)}
         <label for="heroDistrict" data-t="pickLabel">Valitse vaalipiirisi</label>
         <select id="heroDistrict"></select>
         <button class="btn" type="button" id="heroGo" data-t="pickGo">Näytä edustajat</button>
+        <a class="btn ghost" href="tuloskortti.html" data-t="openCard" style="text-decoration:none">Avaa tuloskortti</a>
       </div>
       <p class="stamp" id="stamp"></p>
     </div>
@@ -265,7 +268,7 @@ const SPEAKER = new Set(DATA.meta.speakers || ["1109"]);
 
 const T = {
 fi:{
- brand:"Datalla vaaleihin 2027", navMps:"Edustajat", navParties:"Eduskuntaryhmät", navMethod:"Näin luvut lasketaan",
+ brand:"Datalla vaaleihin 2027", navCard:"Tuloskortti", navScore:"Näin mittaristo toimii", openCard:"Avaa tuloskortti", navMps:"Edustajat", navParties:"Eduskuntaryhmät", navMethod:"Näin luvut lasketaan",
  h1:"Mitä edustajasi teki tällä vaalikaudella?",
  lede:"Jokainen täysistunnon äänestys ja nimenhuuto vaalikaudelta 2023–2027, edustaja kerrallaan: <b>{votes} äänestystä</b>, <b>{rc} nimenhuutoa</b> ja <b>{mps} edustajaa</b>. Lähteenä eduskunnan avoin data.",
  pickLabel:"Valitse vaalipiirisi", pickGo:"Näytä edustajat",
@@ -309,7 +312,7 @@ fi:{
  hoverTpl:"{name} ({party}), {vote}"
 },
 en:{
- brand:"Data-based voting 2027", navMps:"MPs", navParties:"Parliamentary groups", navMethod:"How we count",
+ brand:"Data-based voting 2027", navCard:"Scorecard", navScore:"How the scorecard works", openCard:"Open the scorecard", navMps:"MPs", navParties:"Parliamentary groups", navMethod:"How we count",
  h1:"What did your MP do this term?",
  lede:"Every plenary vote and roll call of the 2023–2027 term, MP by MP: <b>{votes} votes</b>, <b>{rc} roll calls</b> and <b>{mps} MPs</b>. Source: Parliament of Finland open data.",
  pickLabel:"Choose your electoral district", pickGo:"Show MPs",

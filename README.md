@@ -44,6 +44,19 @@ Notes:
   normally keeps the repo active; if it is ever paused, GitHub e-mails you and one click re-enables it.
 - No custom domain is needed. One can be added later under Settings → Pages without changing anything else.
 
+## The site
+
+| Page | File | Content |
+|---|---|---|
+| Front page | `index.html` (from `site/template.html`) | Confidence votes on the chamber diagram, MPs by district, MP profiles, group agreement |
+| Scorecard | `tuloskortti.html` (from `site/scorecard.html`) | Six sections (presence, roles, voting line, contribution, consistency & transparency, costs) at six levels (Parliament, government/opposition, group, committee, district, MP), cost lens, highest/lowest lists with filters |
+| How the scorecard works | `mittaristo.html` (from `site/method.html`) | Why, how to read, every measure's card (what it tells / doesn't tell), comparison rules, costs and fee sources, what we don't show, the company analogy |
+
+- Measure definitions live in one place: `site/kpi_defs.js` (formulas, applicability, texts in Finnish and English).
+- Scorecard numbers are computed by `edk/scorecard.py` as per-MP counts; the page pools them for any level (sum of numerators / sum of denominators).
+- Fee rules live in `site/fees.json` with effective dates, sources and a `verified` flag. When the fee committee decides new amounts, or an amount is confirmed from an official source, update this file; the site marks every figure that depends on unverified amounts.
+- Each build also writes `site-data/scorecard.json` (committed daily as an audit trail).
+
 ## Sources
 
 | Source | What | How |

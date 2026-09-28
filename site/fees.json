@@ -1,0 +1,38 @@
+{
+  "_readme": "Monthly euro amounts from the published rules. Each period applies from 'from' (inclusive) until the next period. 'verified': true only when the amount is confirmed from an official source (eduskunta.fi, Finlex, valtioneuvosto.fi). Unverified amounts are used in calculations but the site marks every figure that depends on them. Update this file when the fee committee (palkkiotoimikunta) decides new amounts.",
+  "mp_fee": [
+    {"from": "2023-04-05", "under4": 7137, "4to11": 7494, "12plus": 7993, "verified": false,
+     "source": "Seura 29.4.2024 (quoting Eduskunta's administrative director); Yle 18.9.2025 (the October 2025 raise from these amounts)"},
+    {"from": "2025-10-01", "under4": 7637, "4to11": 7944, "12plus": 8393, "verified": true,
+     "source": "eduskunta.fi: Kansanedustajien palkkiot ja kulukorvaukset"}
+  ],
+  "speaker_fee": [
+    {"from": "2023-04-05", "speaker": 15315, "deputy": 11942, "verified": false,
+     "source": "eduskunta.fi current amounts; amounts before October 2025 not yet confirmed"},
+    {"from": "2025-10-01", "speaker": 15315, "deputy": 11942, "verified": true,
+     "source": "eduskunta.fi: Kansanedustajien palkkiot ja kulukorvaukset"}
+  ],
+  "chair_supplement": [
+    {"from": "2023-04-05", "major_committee": 1323, "other_committee": 803, "group_16plus": 1323, "group_3to15": 803, "verified": false,
+     "source": "eduskunta.fi current amounts; amounts before October 2025 not yet confirmed"},
+    {"from": "2025-10-01", "major_committee": 1323, "other_committee": 803, "group_16plus": 1323, "group_3to15": 803, "verified": true,
+     "source": "eduskunta.fi: Kansanedustajien palkkiot ja kulukorvaukset"}
+  ],
+  "major_committees": ["SUV01", "PEV01", "UAV01", "VAV01", "TRV01"],
+  "minister_fee": [
+    {"from": "2023-04-05", "prime_minister": 14448, "minister": 11266, "verified": false,
+     "source": "Press (Ilta-Sanomat via Uusi Suomi 24.5.2023). Later government decisions on its own fees not yet confirmed"}
+  ],
+  "minister_share_of_mp_fee": 0.5,
+  "minister_share_of_allowance": 0.5,
+  "minister_rule_verified": false,
+  "minister_rule_source": "Yle 18.9.2025 and other press: ministers who are MPs receive 50% of the MP fee and 50% of the expense allowance",
+  "allowance": [
+    {"from": "2023-04-05", "capital_region": 986.81, "outside": 1315.75, "outside_with_second_home": 1809.15, "verified": false,
+     "source": "eduskunta.fi current amounts; amounts before October 2025 not yet confirmed"},
+    {"from": "2025-10-01", "capital_region": 986.81, "outside": 1315.75, "outside_with_second_home": 1809.15, "verified": true,
+     "source": "eduskunta.fi: Kansanedustajien palkkiot ja kulukorvaukset"}
+  ],
+  "capital_region": ["Helsinki", "Espoo", "Vantaa", "Kauniainen"],
+  "tenure_rule": "Fee level from years as an MP before the month: under 4, 4-11, 12 or more. Counted from all periods as an MP (substitute periods included). Counting method to be confirmed with Eduskunta."
+}
