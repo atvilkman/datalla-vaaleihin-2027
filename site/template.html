@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datalla vaaleihin 2027 – mitä edustajasi teki?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F4F3; --surface:#FFFFFF; --ink:#15232C; --muted:#56636C; --line:#D3D9DB; --soft:#E7EBEC;
+  --accent:#1F4FA3; --jaa:#1C7C53; --ei:#C03A3A; --tyhja:#B98310; --poissa:#9AA5AC;
+  --font:"Hanken Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F171C; --surface:#16222A; --ink:#E6ECEE; --muted:#9AA8B0; --line:#2A3942; --soft:#1D2B34;
+    --accent:#86A9EE; --jaa:#43B883; --ei:#E46A6A; --tyhja:#E0AC3C; --poissa:#6C7A82;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F171C; --surface:#16222A; --ink:#E6ECEE; --muted:#9AA8B0; --line:#2A3942; --soft:#1D2B34;
+  --accent:#86A9EE; --jaa:#43B883; --ei:#E46A6A; --tyhja:#E0AC3C; --poissa:#6C7A82;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px); -webkit-text-size-adjust:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font); font-size:17px; line-height:1.55; font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+button,select,input{font:inherit; color:inherit}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:4px}
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px}
+img,svg{max-width:100%}
+
+/* header */
+.top{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 0; border-bottom:1px solid var(--line)}
+.brand{font-weight:800; font-size:18px; letter-spacing:-.01em; display:flex; align-items:center; gap:10px}
+.brand .mark{display:inline-grid; grid-template-columns:repeat(3,7px); gap:3px}
+.brand .mark i{width:7px;height:7px;border-radius:50%;background:var(--jaa);display:block}
+.brand .mark i:nth-child(2),.brand .mark i:nth-child(6){background:var(--ei)}
+.brand .mark i:nth-child(5){background:transparent; box-shadow:inset 0 0 0 1.5px var(--poissa)}
+.top nav{display:flex; gap:18px; align-items:center; font-size:15px}
+.top nav a{color:var(--ink); text-decoration:none}
+.top nav a:hover{text-decoration:underline}
+.lang{display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden}
+.lang button{border:0; background:transparent; padding:5px 11px; cursor:pointer; font-size:14px}
+.lang button[aria-pressed="true"]{background:var(--ink); color:var(--paper)}
+@media (max-width:760px){ .top nav a{display:none} }
+
+/* hero */
+.hero{display:grid; grid-template-columns: minmax(0,5fr) minmax(0,7fr); gap:40px; padding:44px 0 28px; align-items:start}
+@media (max-width:900px){ .hero{grid-template-columns:1fr; gap:24px; padding-top:28px} }
+h1{font-size:clamp(34px,5.2vw,60px); line-height:1.02; letter-spacing:-.035em; font-weight:800; margin:0 0 18px}
+.lede{font-size:18px; color:var(--muted); max-width:34em; margin:0 0 26px}
+.lede b{color:var(--ink); font-weight:600}
+.pick{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.pick label{font-weight:600; width:100%; font-size:15px}
+select{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:11px 14px; min-width:240px; max-width:100%}
+.btn{background:var(--ink); color:var(--paper); border:0; border-radius:10px; padding:11px 18px; cursor:pointer; font-weight:600}
+.btn.ghost{background:transparent; color:var(--ink); border:1px solid var(--line)}
+.stamp{margin-top:26px; font-size:14px; color:var(--muted)}
+
+.board{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:18px 18px 14px}
+.board-head{display:flex; gap:10px; align-items:flex-start; justify-content:space-between}
+.board-head h2{font-size:15px; font-weight:600; margin:0; color:var(--muted)}
+.board-title{font-size:19px; font-weight:600; line-height:1.3; margin:4px 0 2px; letter-spacing:-.01em}
+.board-sub{font-size:14px; color:var(--muted); margin:0}
+.stepper{display:flex; gap:6px; flex:none}
+.stepper button{width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:transparent; cursor:pointer; font-size:17px; line-height:1}
+.stepper button:disabled{opacity:.35; cursor:default}
+#hemi{display:block; width:100%; height:auto; margin-top:6px}
+#hemi circle{cursor:pointer}
+#hemi circle:hover{stroke:var(--ink); stroke-width:2}
+.tally{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:15px; justify-content:center; margin-top:-4px}
+.tally span{display:inline-flex; align-items:center; gap:7px}
+.dot{width:11px; height:11px; border-radius:50%; display:inline-block; flex:none}
+.d-y{background:var(--jaa)} .d-n{background:var(--ei)} .d-b{background:var(--tyhja)} .d-a{box-shadow:inset 0 0 0 2px var(--poissa)} .d--{background:var(--soft)}
+.hover-line{min-height:1.4em; text-align:center; font-size:14px; color:var(--muted); margin:8px 0 0}
+.board-note{font-size:13px; color:var(--muted); border-top:1px solid var(--line); margin-top:12px; padding-top:10px}
+
+/* sections */
+section.block{padding:44px 0; border-top:1px solid var(--line)}
+section.block > h2{font-size:clamp(26px,3.4vw,36px); letter-spacing:-.025em; line-height:1.1; margin:0 0 10px; font-weight:800}
+.intro{color:var(--muted); max-width:44em; margin:0 0 22px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px}
+.chip{border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:7px 14px; cursor:pointer; font-size:15px}
+.chip[aria-pressed="true"]{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.toolbar{display:flex; flex-wrap:wrap; gap:12px 18px; align-items:center; margin-bottom:14px}
+.toolbar input[type=search]{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 14px; min-width:240px}
+.toolbar label{font-size:15px; display:inline-flex; gap:8px; align-items:center}
+.count{font-size:14px; color:var(--muted)}
+
+.tablewrap{overflow-x:auto; background:var(--surface); border:1px solid var(--line); border-radius:14px}
+table{border-collapse:collapse; width:100%; min-width:760px; font-size:15px}
+th,td{padding:11px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:middle}
+th{font-weight:600; font-size:13px; color:var(--muted); white-space:nowrap; background:var(--surface)}
+th button{all:unset; cursor:pointer; display:inline-flex; gap:4px; align-items:center}
+th button:focus-visible{outline:3px solid var(--accent)}
+th[aria-sort="ascending"] button::after{content:"▲"; font-size:9px}
+th[aria-sort="descending"] button::after{content:"▼"; font-size:9px}
+td.num,th.num{text-align:right}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--soft)}
+tbody tr:last-child td{border-bottom:0}
+.name{font-weight:600}
+.meta{font-size:13px; color:var(--muted); font-weight:400}
+.bar{display:inline-block; width:80px; height:6px; background:var(--soft); border-radius:3px; vertical-align:middle; margin-left:8px; position:relative; overflow:hidden}
+.bar i{position:absolute; left:0; top:0; bottom:0; background:var(--ink); border-radius:3px}
+.tag{display:inline-block; font-size:12px; border:1px solid var(--line); border-radius:6px; padding:1px 6px; margin-left:6px; color:var(--muted); font-weight:500; white-space:nowrap}
+
+/* parties */
+.parties{display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:36px}
+@media (max-width:900px){ .parties{grid-template-columns:1fr} }
+.matrix{border-collapse:separate; border-spacing:3px; min-width:0; width:auto; font-size:13px}
+.matrix th,.matrix td{border:0; padding:0; text-align:center}
+.matrix th{padding:4px; color:var(--muted); font-weight:600}
+.matrix td{width:52px; height:40px; border-radius:6px; font-weight:600}
+.cohrow{display:grid; grid-template-columns:140px 1fr 56px; gap:12px; align-items:center; padding:8px 0; border-bottom:1px solid var(--line); font-size:15px}
+.cohbar{height:10px; background:var(--soft); border-radius:5px; overflow:hidden}
+.cohbar i{display:block; height:100%; background:var(--ink)}
+.small{font-size:13px; color:var(--muted)}
+
+/* method */
+.method{columns:2 320px; column-gap:40px; max-width:1000px}
+.method p{margin:0 0 14px; break-inside:avoid}
+.method b{font-weight:600}
+footer{padding:28px 0 40px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
+
+/* profile dialog */
+dialog{border:0; padding:0; background:var(--surface); color:var(--ink); border-radius:18px; width:min(720px, calc(100vw - 24px)); max-height:calc(100dvh - 24px); box-shadow:0 20px 60px rgba(0,0,0,.25)}
+dialog::backdrop{background:rgba(10,18,24,.55)}
+.pro{padding:26px 26px 22px}
+.pro-head{display:flex; justify-content:space-between; gap:16px; align-items:flex-start}
+.pro h3{font-size:30px; letter-spacing:-.025em; margin:0; line-height:1.1; font-weight:800}
+.pro .who{color:var(--muted); margin:6px 0 0; font-size:15px}
+.close{border:1px solid var(--line); background:transparent; border-radius:50%; width:38px; height:38px; cursor:pointer; font-size:20px; flex:none}
+.notes{margin:14px 0 0; display:flex; flex-direction:column; gap:6px}
+.note{font-size:14px; background:var(--soft); border-radius:10px; padding:8px 12px}
+.stats{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:20px 0}
+@media (max-width:560px){ .stats{grid-template-columns:1fr} .pro{padding:20px 18px} }
+.stat{border:1px solid var(--line); border-radius:12px; padding:14px}
+.stat .v{font-size:30px; font-weight:800; letter-spacing:-.02em; line-height:1}
+.stat .k{font-size:14px; font-weight:600; margin-top:6px}
+.stat .c{font-size:13px; color:var(--muted); margin-top:4px}
+.split{display:flex; height:10px; border-radius:5px; overflow:hidden; background:var(--soft); margin-top:10px}
+.split i{display:block; height:100%}
+.legend{display:flex; flex-wrap:wrap; gap:4px 14px; font-size:13px; color:var(--muted); margin-top:8px}
+.legend span{display:inline-flex; gap:6px; align-items:center}
+.kv h4{font-size:15px; margin:4px 0 8px}
+.kvgrid{display:flex; flex-wrap:wrap; gap:5px}
+.kvgrid span{width:22px; height:22px; border-radius:5px; display:inline-block}
+.kvgrid .d-a{box-shadow:inset 0 0 0 2px var(--poissa)}
+@media (prefers-reduced-motion: no-preference){
+  #hemi circle{transition:fill .35s ease, stroke .2s}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand" aria-label="Datalla vaaleihin 2027"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span data-t="brand">Datalla vaaleihin 2027</span></div>
+    <nav>
+      <a href="#edustajat" data-t="navMps">Edustajat</a>
+      <a href="#ryhmat" data-t="navParties">Eduskuntaryhmät</a>
+      <a href="#menetelma" data-t="navMethod">Näin luvut lasketaan</a>
+      <span class="lang" role="group" aria-label="Kieli / Language"><button type="button" data-lang="fi" aria-pressed="true">FI</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1 data-t="h1">Mitä edustajasi teki tällä vaalikaudella?</h1>
+      <p class="lede" data-t-html="lede"></p>
+      <div class="pick">
+        <label for="heroDistrict" data-t="pickLabel">Valitse vaalipiirisi</label>
+        <select id="heroDistrict"></select>
+        <button class="btn" type="button" id="heroGo" data-t="pickGo">Näytä edustajat</button>
+      </div>
+      <p class="stamp" id="stamp"></p>
+    </div>
+
+    <div class="board" aria-labelledby="boardTitle">
+      <div class="board-head">
+        <div>
+          <h2 data-t="boardH">Luottamusäänestykset</h2>
+          <p class="board-title" id="boardTitle"></p>
+          <p class="board-sub" id="boardSub"></p>
+        </div>
+        <div class="stepper">
+          <button type="button" id="prevVote" aria-label="Edellinen äänestys">‹</button>
+          <button type="button" id="nextVote" aria-label="Seuraava äänestys">›</button>
+        </div>
+      </div>
+      <svg id="hemi" viewBox="0 0 620 330" role="img" aria-label="Istuntosali"></svg>
+      <div class="tally" id="tally"></div>
+      <p class="hover-line" id="hoverLine" aria-live="polite"></p>
+      <p class="board-note" data-t="boardNote"></p>
+    </div>
+  </div>
+
+  <section class="block" id="edustajat">
+    <h2 data-t="mpsH">Edustajat vaalipiireittäin</h2>
+    <p class="intro" data-t="mpsIntro"></p>
+    <div class="chips" id="districtChips" role="group" aria-label="Vaalipiiri"></div>
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="Hae nimellä" aria-label="Hae nimellä">
+      <label><input type="checkbox" id="showFormer"> <span data-t="showFormer">Näytä myös kesken kauden lähteneet</span></label>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="tablewrap">
+      <table id="mpTable">
+        <thead><tr>
+          <th data-k="name"><button type="button" data-t="colName">Edustaja</button></th>
+          <th data-k="party"><button type="button" data-t="colParty">Ryhmä</button></th>
+          <th class="num" data-k="part"><button type="button" data-t="colPart">Äänesti</button></th>
+          <th class="num" data-k="ag"><button type="button" data-t="colAg">Ryhmää vastaan</button></th>
+          <th class="num" data-k="ro"><button type="button" data-t="colRo">Poissa ilman syytä</button></th>
+          <th class="num" data-k="lt"><button type="button" data-t="colLt">Myöhästymiset</button></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="small" data-t="tableNote" style="margin-top:10px"></p>
+  </section>
+
+  <section class="block" id="ryhmat">
+    <h2 data-t="partiesH">Kuinka usein ryhmät äänestävät samoin</h2>
+    <p class="intro" data-t="partiesIntro"></p>
+    <div class="parties">
+      <div class="tablewrap" style="padding:14px; border-radius:14px"><table class="matrix" id="matrix"></table></div>
+      <div>
+        <h3 style="margin:0 0 6px; font-size:18px" data-t="cohH">Ryhmäkuri</h3>
+        <p class="small" data-t="cohIntro" style="margin:0 0 10px"></p>
+        <div id="coh"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="menetelma">
+    <h2 data-t="methodH">Näin luvut lasketaan</h2>
+    <div class="method" data-t-html="method"></div>
+  </section>
+
+  <footer data-t-html="footer"></footer>
+</div>
+
+<dialog id="profile" aria-labelledby="proName"><div class="pro" id="proBody"></div></dialog>
+
+<script>
+const DATA = __DATA__;
+const $ = s => document.querySelector(s);
+const PARTY = {
+  kok:{fi:"Kokoomus",en:"National Coalition"}, ps:{fi:"Perussuomalaiset",en:"Finns Party"},
+  sd:{fi:"SDP",en:"Social Democrats"}, kesk:{fi:"Keskusta",en:"Centre"}, vihr:{fi:"Vihreät",en:"Greens"},
+  vas:{fi:"Vasemmistoliitto",en:"Left Alliance"}, r:{fi:"RKP",en:"Swedish People's Party"},
+  kd:{fi:"Kristillisdemokraatit",en:"Christian Democrats"}, liik:{fi:"Liike Nyt",en:"Movement Now"},
+  tv:{fi:"Yhden edustajan ryhmä (tv)",en:"One-member group (tv)"}, erk:{fi:"erk",en:"erk"}
+};
+const DIST = {"Helsingin":"Helsinki","Uudenmaan":"Uusimaa","Varsinais-Suomen":"Varsinais-Suomi","Satakunnan":"Satakunta","Ahvenanmaan":"Ahvenanmaa","Hämeen":"Häme","Pirkanmaan":"Pirkanmaa","Kaakkois-Suomen":"Kaakkois-Suomi","Savo-Karjalan":"Savo-Karjala","Vaasan":"Vaasa","Keski-Suomen":"Keski-Suomi","Oulun":"Oulu","Lapin":"Lappi"};
+const DIST_ORDER = Object.keys(DIST);
+const SPEAKER = new Set(DATA.meta.speakers || ["1109"]);
+
+const T = {
+fi:{
+ brand:"Datalla vaaleihin 2027", navMps:"Edustajat", navParties:"Eduskuntaryhmät", navMethod:"Näin luvut lasketaan",
+ h1:"Mitä edustajasi teki tällä vaalikaudella?",
+ lede:"Jokainen täysistunnon äänestys ja nimenhuuto vaalikaudelta 2023–2027, edustaja kerrallaan: <b>{votes} äänestystä</b>, <b>{rc} nimenhuutoa</b> ja <b>{mps} edustajaa</b>. Lähteenä eduskunnan avoin data.",
+ pickLabel:"Valitse vaalipiirisi", pickGo:"Näytä edustajat",
+ stamp:"Aineisto: äänestykset {fv} – {lv}, nimenhuudot {lr} asti. Päivitetty {gen}.",
+ boardH:"Luottamusäänestykset", boardNote:"Jokainen piste on edustaja. Vihreä äänesti jaa eli luottamusta hallitukselle, punainen ei, keltainen tyhjää ja rengas oli poissa. Ryhmät on järjestetty sen mukaan, kuinka usein ne äänestävät samoin kuin suurin ryhmä. Klikkaa pistettä nähdäksesi edustajan tiedot.",
+ boardSub:"{date} · {n}/{total}", yes:"Jaa", no:"Ei", blank:"Tyhjä", absent:"Poissa", notMp:"Ei edustaja tuolloin",
+ prev:"Edellinen äänestys", next:"Seuraava äänestys",
+ mpsH:"Edustajat vaalipiireittäin",
+ mpsIntro:"Valitse vaalipiiri ja avaa edustajan tiedot klikkaamalla riviä. Sarakkeita voi järjestää otsikosta.",
+ all:"Kaikki", showFormer:"Näytä myös kesken kauden lähteneet", search:"Hae nimellä", count:"{n} edustajaa",
+ colName:"Edustaja", colParty:"Ryhmä", colPart:"Äänesti", colAg:"Ryhmää vastaan", colRo:"Poissa ilman syytä", colLt:"Myöhästymiset",
+ tableNote:"Äänesti = osuus niistä äänestyksistä, joiden aikana henkilö oli edustaja. Ryhmää vastaan = kuinka monessa äänestyksessä edustaja äänesti eri tavalla kuin oman ryhmänsä enemmistö. Poissa ilman syytä ja myöhästymiset tulevat täysistuntojen nimenhuudoista.",
+ former:"lähti {d}", sub:"aloitti {d}", speaker:"puhemies", minister:"ministeri",
+ partiesH:"Kuinka usein ryhmät äänestävät samoin",
+ partiesIntro:"Luku kertoo, kuinka suuressa osassa kaikista vaalikauden äänestyksistä kahden ryhmän enemmistöt äänestivät samalla tavalla. Mukana ovat ryhmät, joissa on vähintään kaksi edustajaa.",
+ cohH:"Yksimielisyys", cohIntro:"Osuus vaalikauden äänestyksistä, joissa kaikki äänestäneet ryhmän jäsenet äänestivät samalla tavalla.",
+ methodH:"Näin luvut lasketaan",
+ method:`<p><b>Lähteet.</b> Kaikki luvut on laskettu eduskunnan avoimesta datasta (api.eduskunta.fi): täysistuntojen äänestykset edustajittain, täysistuntojen nimenhuutoraportit ja edustajien tiedot. Aineisto on lisensoitu CC BY 4.0.</p>
+<p><b>Äänestysaktiivisuus.</b> Mitätöidyt äänestykset on jätetty pois. Osuus lasketaan vain niistä äänestyksistä, joiden aikana henkilö oli kansanedustaja, joten kesken kauden aloittaneet ja lähteneet ovat vertailukelpoisia.</p>
+<p><b>Poissaolo ei aina tarkoita laiminlyöntiä.</b> Ministerit, puhemies ja eduskuntatyöhön liittyvissä tehtävissä olevat edustajat ovat pois äänestyksistä tehtävänsä vuoksi. Siksi taulukossa näytetään nimenhuudon <i>poissaolot ilman ilmoitettua syytä</i>. Nimenhuudossa poissaolon syy merkitään: eduskuntatyöhön liittyvä tehtävä, henkilökohtainen syy tai ei syytä.</p>
+<p><b>Myöhästymiset.</b> Nimenhuutoraportti luettelee edustajat, jotka ilmoittautuivat läsnä oleviksi nimenhuudon jälkeen. Alle 15 minuuttia myöhässä saapunut merkitään läsnä olevaksi, joten hän ei näy myöhästyneenä.</p>
+<p><b>Ryhmää vastaan.</b> Ryhmän enemmistö lasketaan kussakin äänestyksessä äänestäneistä ryhmän jäsenistä. Tasatilanteet ja yhden edustajan ryhmät jätetään pois. Monet äänestykset ovat menettelyllisiä, joten luku kertoo itsenäisyydestä, ei kannasta yksittäiseen asiaan.</p>
+<p><b>Luottamusäänestykset.</b> Kuvassa näytetään kaikki vaalikauden äänestykset, joissa eduskunta äänesti luottamuksesta hallitukselle, esimerkiksi välikysymyskeskustelujen päätteeksi.</p>
+<p><b>Rajoitukset.</b> Tämä on ensimmäinen versio. Aineisto on tilannekuva, ei reaaliaikainen. Puheenvuorot, aloitteet, valiokuntapoissaolot ja sidonnaisuudet lisätään seuraavissa versioissa. Ryhmätunnus "erk" näytetään sellaisenaan.</p>
+<p><b>Virheet.</b> Jos huomaat virheen, ilmoita siitä. Jokainen luku on jäljitettävissä eduskunnan alkuperäiseen asiakirjaan.</p>`,
+ footer:"Lähde: Eduskunta, avoin data (CC BY 4.0). Datalla vaaleihin 2027 on puolueeton tietopalvelu, eikä se ota kantaa puolueisiin tai ehdokkaisiin. Sivusto ei käytä evästeitä eikä kävijäseurantaa. Palvelun ylläpitäjä GitHub voi kirjata kävijöiden IP-osoitteita teknisiin tarkoituksiin.",
+ proWho:"{party} · {dist} vaalipiiri · s. {by}",
+ statPart:"äänesti", statPartC:"{cast} / {e} äänestyksestä, joiden aikana oli edustaja. Eduskunnan mediaani {med} %.",
+ statAg:"kertaa ryhmää vastaan", statAgC:"{pct} % äänestyksistä, joissa ryhmällä oli selvä enemmistö.",
+ statRc:"nimenhuutoa poissa", statRcC:"{n} nimenhuutoa edustajana ollessa.",
+ statLt:"myöhästymistä", statLtC:"Ilmoittautui läsnä olevaksi nimenhuudon jälkeen.",
+ rcWork:"eduskuntatyö", rcPers:"henkilökohtainen syy", rcNo:"ei syytä",
+ kvH:"Luottamusäänestykset ({n})",
+ noteMin:"Ministeri: {list}. Ministerit ovat usein poissa äänestyksistä tehtäviensä vuoksi.",
+ noteSpeaker:"Puhemies johtaa istuntoja eikä äänestä, joten äänestystiedot eivät ole vertailukelpoisia.",
+ noteFew:"Edustaja oli mukana vain {e} äänestyksessä, joten prosentit eivät ole vertailukelpoisia.",
+ noteFormer:"Kansanedustajuus päättyi tai keskeytyi kaudella: viimeinen äänestys {d}.",
+ noteSub:"Aloitti kaudella myöhemmin: ensimmäinen äänestys {d}.",
+ noteParties:"Ryhmät kauden aikana: {list}.",
+ close:"Sulje",
+ hoverTpl:"{name} ({party}), {vote}"
+},
+en:{
+ brand:"Data-based voting 2027", navMps:"MPs", navParties:"Parliamentary groups", navMethod:"How we count",
+ h1:"What did your MP do this term?",
+ lede:"Every plenary vote and roll call of the 2023–2027 term, MP by MP: <b>{votes} votes</b>, <b>{rc} roll calls</b> and <b>{mps} MPs</b>. Source: Parliament of Finland open data.",
+ pickLabel:"Choose your electoral district", pickGo:"Show MPs",
+ stamp:"Data: votes {fv} – {lv}, roll calls up to {lr}. Updated {gen}.",
+ boardH:"Confidence votes", boardNote:"Each dot is an MP. Green voted yes (confidence in the government), red no, yellow blank, and a ring was absent. Groups are ordered by how often they vote the same way as the largest group. Click a dot to see the MP's record.",
+ boardSub:"{date} · {n}/{total}", yes:"Yes", no:"No", blank:"Blank", absent:"Absent", notMp:"Not an MP at the time",
+ prev:"Previous vote", next:"Next vote",
+ mpsH:"MPs by electoral district",
+ mpsIntro:"Choose a district and click a row to open the MP's record. Click a column heading to sort.",
+ all:"All", showFormer:"Include MPs who left during the term", search:"Search by name", count:"{n} MPs",
+ colName:"MP", colParty:"Group", colPart:"Voted", colAg:"Against own group", colRo:"Absent, no reason", colLt:"Late arrivals",
+ tableNote:"Voted = share of the votes held while the person was an MP. Against own group = votes where the MP voted differently from their group's majority. Absences without a reason and late arrivals come from the plenary roll calls.",
+ former:"left {d}", sub:"joined {d}", speaker:"Speaker", minister:"minister",
+ partiesH:"How often groups vote the same way",
+ partiesIntro:"Share of all votes this term in which the majorities of two groups voted the same way. Groups with at least two MPs are included.",
+ cohH:"Unanimity", cohIntro:"Share of this term's votes in which every voting member of the group voted the same way.",
+ methodH:"How we count",
+ method:`<p><b>Sources.</b> All figures come from the Parliament of Finland open data (api.eduskunta.fi): plenary votes by MP, plenary roll-call reports and MP records. Licensed CC BY 4.0.</p>
+<p><b>Voting participation.</b> Cancelled votes are excluded. The share only counts votes held while the person was an MP, so MPs who joined or left mid-term are comparable.</p>
+<p><b>Absence is not always neglect.</b> Ministers, the Speaker and MPs on parliamentary duties miss votes because of their role. That is why the table shows roll-call <i>absences without a stated reason</i>. The roll call records a reason: parliamentary duty, personal reason, or none.</p>
+<p><b>Late arrivals.</b> The roll-call report lists MPs who registered as present after the roll call. Anyone arriving within 15 minutes is recorded as present, so they do not appear as late.</p>
+<p><b>Against own group.</b> A group's majority is computed from its members who voted. Ties and one-member groups are excluded. Many votes are procedural, so the figure describes independence, not a position on any single issue.</p>
+<p><b>Confidence votes.</b> The chart shows every vote this term on confidence in the government, for example at the end of interpellation debates. Titles are shown in Finnish.</p>
+<p><b>Limitations.</b> This is the first version and a snapshot, not live data. Speeches, initiatives, committee absences and declared interests come in later versions. The group code "erk" is shown as recorded.</p>
+<p><b>Errors.</b> If you spot an error, please report it. Every figure can be traced to the original parliamentary document.</p>`,
+ footer:"Source: Parliament of Finland, open data (CC BY 4.0). Data-based voting 2027 is a non-partisan information service and does not endorse any party or candidate. The site uses no cookies or visitor tracking. The host, GitHub, may log visitor IP addresses for technical purposes.",
+ proWho:"{party} · {dist} district · b. {by}",
+ statPart:"voted", statPartC:"{cast} of {e} votes held while an MP. Parliament median {med}%.",
+ statAg:"times against own group", statAgC:"{pct}% of votes where the group had a clear majority.",
+ statRc:"roll calls absent", statRcC:"Out of {n} roll calls while an MP.",
+ statLt:"late arrivals", statLtC:"Registered as present after the roll call.",
+ rcWork:"parliamentary duty", rcPers:"personal reason", rcNo:"no reason",
+ kvH:"Confidence votes ({n})",
+ noteMin:"Minister: {list}. Ministers often miss votes because of their duties.",
+ noteSpeaker:"The Speaker chairs sessions and does not vote, so voting figures are not comparable.",
+ noteFew:"This MP took part in only {e} votes, so the percentages are not comparable.",
+ noteFormer:"Mandate ended or was interrupted during the term: last vote {d}.",
+ noteSub:"Joined later in the term: first vote {d}.",
+ noteParties:"Groups during the term: {list}.",
+ close:"Close",
+ hoverTpl:"{name} ({party}), {vote}"
+}};
+
+let lang = "fi";
+try{ const s = localStorage.getItem("dv27-lang"); if(s==="en"||s==="fi") lang=s; }catch(e){}
+const t = (k, v={}) => (T[lang][k]||k).replace(/\{(\w+)\}/g,(_,x)=> v[x] ?? "");
+const fmtDate = d => { if(!d) return ""; const [y,m,dd]=d.split("-"); return lang==="fi" ? `${+dd}.${+m}.${y}` : `${+dd} ${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][+m-1]} ${y}`; };
+const pct = (a,b) => b ? a/b*100 : null;
+const f1 = x => x==null ? "–" : (lang==="fi" ? x.toFixed(1).replace(".",",") : x.toFixed(1));
+const pname = p => (PARTY[p]||{fi:p,en:p})[lang];
+const esc = s => String(s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+// ---------- derived
+const MPS = DATA.mps.map((m,i)=>({...m, i, name:`${m.f} ${m.l}`, cast:m.y+m.n+m.b,
+  part: SPEAKER.has(m.id) ? null : pct(m.y+m.n+m.b, m.e),
+  former: !!m.lv, joined: m.fv > DATA.meta.firstVote }));
+const med = (()=>{ const a=MPS.filter(m=>m.e>=500 && m.part!=null).map(m=>m.part).sort((x,y)=>x-y); return a[Math.floor(a.length/2)]; })();
+// group order: agreement with the largest group, ascending
+const sizes = {}; MPS.filter(m=>!m.former).forEach(m=>sizes[m.p]=(sizes[m.p]||0)+1);
+const largest = Object.entries(sizes).sort((a,b)=>b[1]-a[1])[0][0];
+const agreeMap = {}; DATA.agree.forEach(([a,b,p,n])=>{ agreeMap[a+"|"+b]=p; });
+const multi = DATA.coh.filter(c=>sizes[c[0]]>=2 || ["kok","ps","sd","kesk","vihr","vas","r","kd"].includes(c[0])).map(c=>c[0]);
+const partyRank = p => { const v = agreeMap[largest+"|"+p]; return v==null ? 50 : v; };
+const PORDER = Object.keys(PARTY).sort((a,b)=>partyRank(a)-partyRank(b));
+
+// ---------- i18n apply
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el=>el.textContent=t(el.dataset.t));
+  document.querySelectorAll("[data-t-html]").forEach(el=>el.innerHTML=t(el.dataset.tHtml,{votes:DATA.meta.votes.toLocaleString(lang==="fi"?"fi-FI":"en-GB"),rc:DATA.meta.rollcalls,mps:MPS.length}));
+  $("#stamp").textContent = t("stamp",{fv:fmtDate(DATA.meta.firstVote),lv:fmtDate(DATA.meta.lastVote),lr:fmtDate(DATA.meta.lastRollcall),gen:fmtDate(DATA.meta.generated)});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===lang));
+  $("#q").placeholder = t("search"); $("#q").setAttribute("aria-label", t("search"));
+  $("#prevVote").setAttribute("aria-label", t("prev")); $("#nextVote").setAttribute("aria-label", t("next"));
+  fillDistricts(); renderBoard(); renderTable(); renderParties();
+  if($("#profile").open && currentMp!=null) openProfile(currentMp);
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{ lang=b.dataset.lang; try{localStorage.setItem("dv27-lang",lang)}catch(e){} applyLang(); }));
+
+// ---------- districts
+let district = "";
+function fillDistricts(){
+  const sel=$("#heroDistrict"); const cur=sel.value||district;
+  sel.innerHTML = `<option value="">${esc(t("all"))}</option>` + DIST_ORDER.map(d=>`<option value="${d}">${esc(DIST[d])}</option>`).join("");
+  sel.value = cur;
+  $("#districtChips").innerHTML = ["", ...DIST_ORDER].map(d=>`<button type="button" class="chip" data-d="${d}" aria-pressed="${d===district}">${esc(d?DIST[d]:t("all"))}</button>`).join("");
+  document.querySelectorAll("#districtChips .chip").forEach(c=>c.addEventListener("click",()=>{ district=c.dataset.d; $("#heroDistrict").value=district; fillDistricts(); renderTable(); }));
+}
+$("#heroGo").addEventListener("click",()=>{ district=$("#heroDistrict").value; fillDistricts(); renderTable(); document.getElementById("edustajat").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}); });
+
+// ---------- hemicycle board
+let kIdx = DATA.key.length-1;
+const COLORS = {y:"var(--jaa)", n:"var(--ei)", b:"var(--tyhja)"};
+function seatLayout(N){
+  const rows=8, r0=112, r1=292, cx=310, cy=312;
+  const radii=[...Array(rows)].map((_,i)=>r0+i*(r1-r0)/(rows-1));
+  const tot=radii.reduce((a,b)=>a+b,0);
+  let counts=radii.map(r=>Math.round(N*r/tot)); let diff=N-counts.reduce((a,b)=>a+b,0); counts[rows-1]+=diff;
+  const seats=[];
+  radii.forEach((r,ri)=>{ const c=counts[ri]; for(let j=0;j<c;j++){ const a=Math.PI - (c===1?Math.PI/2:j*Math.PI/(c-1)); seats.push({x:cx+r*Math.cos(a), y:cy-r*Math.sin(a), a}); } });
+  seats.sort((p,q)=> q.a-p.a || (Math.hypot(p.x-cx,p.y-cy)-Math.hypot(q.x-cx,q.y-cy)));
+  return seats;
+}
+function voteLabel(v){ return {y:t("yes"),n:t("no"),b:t("blank"),a:t("absent")}[v]||t("notMp"); }
+function renderBoard(){
+  const k=DATA.key[kIdx];
+  const present = MPS.filter(m=>k.v[m.i]!=="-");
+  const vOrder={y:0,b:1,n:2,a:3};
+  present.sort((a,b)=> PORDER.indexOf(a.p)-PORDER.indexOf(b.p) || vOrder[k.v[a.i]]-vOrder[k.v[b.i]] || a.l.localeCompare(b.l,"fi"));
+  const seats=seatLayout(present.length);
+  const svg=$("#hemi");
+  svg.innerHTML = present.map((m,j)=>{ const v=k.v[m.i]; const s=seats[j];
+    const fill = v==="a" ? "var(--surface)" : COLORS[v];
+    const stroke = v==="a" ? 'stroke="var(--poissa)" stroke-width="2"' : "";
+    return `<circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="7.4" fill="${fill}" ${stroke} data-i="${m.i}" tabindex="0" role="button" aria-label="${esc(m.name)}, ${esc(pname(m.p))}: ${esc(voteLabel(v))}"><title>${esc(m.name)} (${esc(m.p)}): ${esc(voteLabel(v))}</title></circle>`; }).join("")
+    + `<text x="310" y="300" text-anchor="middle" font-size="30" font-weight="800" fill="var(--ink)" font-family="var(--font)">${k.r[0]}–${k.r[1]}</text>`
+    + `<text x="310" y="322" text-anchor="middle" font-size="13" fill="var(--muted)" font-family="var(--font)">${esc(t("yes").toLowerCase())} – ${esc(t("no").toLowerCase())}</text>`;
+  svg.setAttribute("aria-label", `${k.agenda}: ${t("yes")} ${k.r[0]}, ${t("no")} ${k.r[1]}, ${t("blank")} ${k.r[2]}, ${t("absent")} ${k.r[3]}`);
+  $("#boardTitle").textContent = k.agenda;
+  $("#boardSub").textContent = t("boardSub",{date:fmtDate(k.date), n:kIdx+1, total:DATA.key.length});
+  $("#tally").innerHTML = [["y",0],["n",1],["b",2],["a",3]].map(([c,i])=>`<span><i class="dot d-${c}"></i>${esc(voteLabel(c))} <b>${k.r[i]}</b></span>`).join("");
+  $("#prevVote").disabled = kIdx===0; $("#nextVote").disabled = kIdx===DATA.key.length-1;
+  svg.querySelectorAll("circle").forEach(c=>{
+    const m=MPS[+c.dataset.i];
+    const show=()=>$("#hoverLine").textContent=t("hoverTpl",{name:m.name,party:pname(m.p),vote:voteLabel(k.v[m.i])});
+    c.addEventListener("mouseenter",show); c.addEventListener("focus",show);
+    c.addEventListener("click",()=>openProfile(m.i));
+    c.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); openProfile(m.i);} });
+  });
+  $("#hoverLine").textContent="";
+}
+$("#prevVote").addEventListener("click",()=>{ if(kIdx>0){kIdx--; renderBoard();} });
+$("#nextVote").addEventListener("click",()=>{ if(kIdx<DATA.key.length-1){kIdx++; renderBoard();} });
+
+// ---------- table
+let sortK="name", sortDir=1;
+function rowVal(m,k){ return {name:m.l+" "+m.f, party:pname(m.p), part:m.part??-1, ag:m.ag, ro:m.ro, lt:m.lt}[k]; }
+function renderTable(){
+  const q=$("#q").value.trim().toLowerCase(); const showFormer=$("#showFormer").checked;
+  let rows=MPS.filter(m=>(!district||m.d===district) && (showFormer||!m.former) && (!q||m.name.toLowerCase().includes(q)));
+  rows.sort((a,b)=>{ const x=rowVal(a,sortK), y=rowVal(b,sortK); return (typeof x==="string" ? x.localeCompare(y,"fi") : x-y)*sortDir || a.l.localeCompare(b.l,"fi"); });
+  document.querySelectorAll("#mpTable th").forEach(th=>th.setAttribute("aria-sort", th.dataset.k===sortK ? (sortDir>0?"ascending":"descending") : "none"));
+  $("#count").textContent=t("count",{n:rows.length});
+  $("#mpTable tbody").innerHTML = rows.map(m=>{
+    const tags=[]; if(SPEAKER.has(m.id)) tags.push(t("speaker")); if(m.min.length) tags.push(t("minister"));
+    if(m.former) tags.push(t("former",{d:fmtDate(m.lv)})); else if(m.joined) tags.push(t("sub",{d:fmtDate(m.fv)}));
+    const p = m.part;
+    return `<tr data-i="${m.i}" tabindex="0"><td><span class="name">${esc(m.name)}</span>${tags.map(x=>`<span class="tag">${esc(x)}</span>`).join("")}<div class="meta">${esc(DIST[m.d]||m.d)}</div></td>
+      <td>${esc(pname(m.p))}</td>
+      <td class="num">${p==null?"–":f1(p)+" %"}<span class="bar" aria-hidden="true"><i style="width:${p==null?0:p}%"></i></span></td>
+      <td class="num">${SPEAKER.has(m.id)?"–":m.ag}</td><td class="num">${m.ro}</td><td class="num">${m.lt}</td></tr>`; }).join("");
+  document.querySelectorAll("#mpTable tbody tr").forEach(tr=>{ const go=()=>openProfile(+tr.dataset.i); tr.addEventListener("click",go); tr.addEventListener("keydown",e=>{ if(e.key==="Enter"){ go(); } }); });
+}
+document.querySelectorAll("#mpTable th button").forEach(b=>b.addEventListener("click",()=>{ const k=b.parentElement.dataset.k; if(sortK===k) sortDir*=-1; else { sortK=k; sortDir = (k==="name"||k==="party")?1:-1; } renderTable(); }));
+$("#q").addEventListener("input",renderTable); $("#showFormer").addEventListener("change",renderTable);
+
+// ---------- parties
+function renderParties(){
+  const ps = PORDER.filter(p=>multi.includes(p) && sizes[p]>=2);
+  let h = `<thead><tr><th></th>${ps.map(p=>`<th scope="col" title="${esc(pname(p))}">${esc(p)}</th>`).join("")}</tr></thead><tbody>`;
+  ps.forEach(a=>{ h+=`<tr><th scope="row" style="text-align:right">${esc(pname(a))}</th>`;
+    ps.forEach(b=>{ if(a===b){ h+=`<td style="background:var(--soft)" aria-hidden="true"></td>`; return; } const v=agreeMap[a+"|"+b]; const alpha = v==null?0:(0.08+0.8*(v/100)); const dark = v!=null && v>60;
+      h+=`<td style="background:color-mix(in srgb, var(--accent) ${Math.round(alpha*100)}%, var(--surface)); color:${dark?"var(--surface)":"var(--ink)"}" title="${esc(pname(a))} – ${esc(pname(b))}: ${v==null?"–":f1(v)+" %"}">${a===b?"":(v==null?"–":Math.round(v))}</td>`; });
+    h+=`</tr>`; });
+  $("#matrix").innerHTML = h+"</tbody>";
+  const coh = DATA.coh.filter(c=>ps.includes(c[0])).sort((a,b)=>b[2]-a[2]);
+  $("#coh").innerHTML = coh.map(([p,mean,unan])=>`<div class="cohrow"><span>${esc(pname(p))}</span><span class="cohbar"><i style="width:${unan}%"></i></span><b style="text-align:right">${f1(unan)} %</b></div>`).join("");
+}
+
+// ---------- profile
+let currentMp=null;
+function openProfile(i){
+  currentMp=i; const m=MPS[i]; const dlg=$("#profile");
+  const notes=[];
+  if(SPEAKER.has(m.id)) notes.push(t("noteSpeaker"));
+  else if(m.e<30) notes.push(t("noteFew",{e:m.e}));
+  if(m.min.length) notes.push(t("noteMin",{list:m.min.map(([n,s,e])=>`${n} ${fmtDate(s)}–${e?fmtDate(e):""}`).join("; ")}));
+  if(m.former) notes.push(t("noteFormer",{d:fmtDate(m.lv)}));
+  if(m.joined) notes.push(t("noteSub",{d:fmtDate(m.fv)}));
+  const others=m.ph.filter(p=>p!==m.p); if(others.length) notes.push(t("noteParties",{list:m.ph.map(pname).join(", ")}));
+  const rcTot=m.rw+m.rp+m.ro, io=Math.max(m.io,1);
+  const seg=(n,c)=>`<i style="width:${(n/io*100).toFixed(2)}%;background:${c}"></i>`;
+  const agPct = m.lb ? m.ag/m.lb*100 : null;
+  const kv = DATA.key.map(k=>({k, v:k.v[m.i]})).filter(x=>x.v!=="-");
+  $("#proBody").innerHTML = `
+    <div class="pro-head"><div><h3 id="proName">${esc(m.name)}</h3>
+      <p class="who">${esc(t("proWho",{party:pname(m.p),dist:DIST[m.d]||m.d,by:m.by||"–"}))}</p></div>
+      <button class="close" type="button" aria-label="${esc(t("close"))}">×</button></div>
+    ${notes.length?`<div class="notes">${notes.map(n=>`<div class="note">${esc(n)}</div>`).join("")}</div>`:""}
+    <div class="stats">
+      <div class="stat"><div class="v">${m.part==null?"–":f1(m.part)+" %"}</div><div class="k">${esc(t("statPart"))}</div><div class="c">${esc(t("statPartC",{cast:m.cast,e:m.e,med:f1(med)}))}</div></div>
+      <div class="stat"><div class="v">${SPEAKER.has(m.id)?"–":m.ag}</div><div class="k">${esc(t("statAg"))}</div><div class="c">${esc(t("statAgC",{pct:f1(agPct)}))}</div></div>
+      <div class="stat"><div class="v">${rcTot}</div><div class="k">${esc(t("statRc"))}</div><div class="c">${esc(t("statRcC",{n:m.io}))}</div>
+        <div class="split" aria-hidden="true">${seg(m.ro,"var(--ink)")}${seg(m.rp,"var(--muted)")}${seg(m.rw,"var(--poissa)")}</div>
+        <div class="legend"><span><i class="dot" style="background:var(--ink)"></i>${esc(t("rcNo"))} ${m.ro}</span><span><i class="dot" style="background:var(--muted)"></i>${esc(t("rcPers"))} ${m.rp}</span><span><i class="dot" style="background:var(--poissa)"></i>${esc(t("rcWork"))} ${m.rw}</span></div></div>
+      <div class="stat"><div class="v">${m.lt}</div><div class="k">${esc(t("statLt"))}</div><div class="c">${esc(t("statLtC"))}</div></div>
+    </div>
+    ${kv.length?`<div class="kv"><h4>${esc(t("kvH",{n:kv.length}))}</h4><div class="kvgrid">${kv.map(({k,v})=>`<span class="d-${v}" title="${esc(fmtDate(k.date)+": "+k.agenda+" – "+voteLabel(v))}" role="img" aria-label="${esc(fmtDate(k.date)+": "+voteLabel(v))}"></span>`).join("")}</div>
+      <div class="legend" style="margin-top:10px">${["y","n","b","a"].map(c=>`<span><i class="dot d-${c}"></i>${esc(voteLabel(c))}</span>`).join("")}</div></div>`:""}`;
+  $("#proBody .close").addEventListener("click",()=>dlg.close());
+  if(!dlg.open) dlg.showModal();
+}
+$("#profile").addEventListener("click",e=>{ if(e.target.id==="profile") e.target.close(); });
+
+applyLang();
+</script>
+</body>
+</html>

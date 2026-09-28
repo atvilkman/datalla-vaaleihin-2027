@@ -1,0 +1,4 @@
+requests>=2.31
+pandas>=2.0
+beautifulsoup4>=4.12
+pyarrow>=14  # optional, for Parquet output
