@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-10-04",
+  "generated": "2026-10-05",
   "votes": 2783,
   "rollcalls": 441,
   "firstVote": "2023-06-20",
@@ -10128,15 +10128,15 @@
      "end": "2026-10-02"
     },
     {
-     "code": "VAV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-02"
-    },
-    {
      "code": "TAV01",
      "role": "Varajäsen",
      "start": "2023-04-19",
+     "end": "2026-10-02"
+    },
+    {
+     "code": "VAV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
      "end": "2026-10-02"
     },
     {
