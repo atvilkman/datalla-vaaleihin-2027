@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-10-19",
+  "generated": "2026-10-20",
   "votes": 2792,
   "rollcalls": 449,
   "firstVote": "2023-06-20",
@@ -13314,6 +13314,12 @@
    "roles": [],
    "cm": [
     {
+     "code": "SUV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-16"
+    },
+    {
      "code": "TAV01",
      "role": "Varapuheenjohtaja",
      "start": "2025-05-28",
@@ -13329,12 +13335,6 @@
      "code": "YMV01",
      "role": "Jäsen",
      "start": "2023-04-19",
-     "end": "2026-10-16"
-    },
-    {
-     "code": "SUV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
      "end": "2026-10-16"
     },
     {
