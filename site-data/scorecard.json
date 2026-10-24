@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-10-23",
+  "generated": "2026-10-24",
   "votes": 2798,
   "rollcalls": 453,
   "firstVote": "2023-06-20",
@@ -2449,15 +2449,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "PUV01",
-     "role": "Jäsen",
-     "start": "2024-09-04",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TIV01",
      "role": "Varapuheenjohtaja",
      "start": "2023-09-22",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "PUV01",
+     "role": "Jäsen",
+     "start": "2024-09-04",
      "end": "2026-10-23"
     }
    ],
