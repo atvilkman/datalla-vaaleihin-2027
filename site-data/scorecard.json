@@ -12668,6 +12668,12 @@
    "roles": [],
    "cm": [
     {
+     "code": "YMV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
      "code": "SUV01",
      "role": "Toinen varapuheenjohtaja",
      "start": "2026-10-09",
@@ -12677,12 +12683,6 @@
      "code": "SUVTJ01",
      "role": "Toinen varapuheenjohtaja",
      "start": "2026-10-09",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "YMV01",
-     "role": "Varapuheenjohtaja",
-     "start": "2024-09-13",
      "end": "2026-10-23"
     },
     {
@@ -12711,7 +12711,7 @@
     "Acn": 18,
     "T": 42.64,
     "Tm": 0.0,
-    "Tc": 66.2,
+    "Tc": 80.76,
     "Tl": 0.0,
     "sw": 0,
     "AGn": 11,
