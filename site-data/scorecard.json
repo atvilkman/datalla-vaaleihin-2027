@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-02",
+  "generated": "2026-11-03",
   "votes": 2798,
   "rollcalls": 453,
   "firstVote": "2023-06-20",
@@ -171,46 +171,6 @@
   }
  },
  "committees": {
-  "LIV01": {
-   "name": "Liikenne- ja viestintävaliokunta",
-   "members": [
-    "1089",
-    "1144",
-    "1301",
-    "1345",
-    "1385",
-    "1398",
-    "1422",
-    "1426",
-    "1430",
-    "1432",
-    "1452",
-    "1467",
-    "1493",
-    "1497",
-    "1502",
-    "1507",
-    "1510",
-    "1513",
-    "1516",
-    "1518",
-    "1519",
-    "1531",
-    "911825",
-    "911826",
-    "911830",
-    "970"
-   ],
-   "chairs": [
-    "1422"
-   ],
-   "chair_supplements": 33840,
-   "att": {
-    "meetings": 3632,
-    "absent": 297,
-    "absent_no_reason": 167
-   }
-  },
   "PUV01": {
    "name": "Puolustusvaliokunta",
    "members": [
@@ -250,6 +210,46 @@
     "meetings": 4284,
     "absent": 578,
     "absent_no_reason": 377
+   }
+  },
+  "LIV01": {
+   "name": "Liikenne- ja viestintävaliokunta",
+   "members": [
+    "1089",
+    "1144",
+    "1301",
+    "1345",
+    "1385",
+    "1398",
+    "1422",
+    "1426",
+    "1430",
+    "1432",
+    "1452",
+    "1467",
+    "1493",
+    "1497",
+    "1502",
+    "1507",
+    "1510",
+    "1513",
+    "1516",
+    "1518",
+    "1519",
+    "1531",
+    "911825",
+    "911826",
+    "911830",
+    "970"
+   ],
+   "chairs": [
+    "1422"
+   ],
+   "chair_supplements": 33840,
+   "att": {
+    "meetings": 3632,
+    "absent": 297,
+    "absent_no_reason": 167
    }
   },
   "LAV01": {
@@ -949,7 +949,7 @@
    "att": null
   },
   "SOTJ01": {
-   "name": "Kunta- ja hyvinvointijaosto",
+   "name": "Kunta- ja terveysjaosto",
    "members": [
     "1202",
     "1312",
@@ -1067,15 +1067,15 @@
    ],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "PUV01",
      "role": "Puheenjohtaja",
      "start": "2025-05-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     }
    ],
@@ -1669,15 +1669,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "UAV01",
-     "role": "Varajäsen",
-     "start": "2024-05-03",
-     "end": "2026-10-23"
-    },
-    {
      "code": "PUV01",
      "role": "Varapuheenjohtaja",
      "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Varajäsen",
+     "start": "2024-05-03",
      "end": "2026-10-23"
     }
    ],
@@ -2082,15 +2082,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "PUV01",
-     "role": "Jäsen",
-     "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TIV01",
      "role": "Jäsen",
      "start": "2023-09-22",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "PUV01",
+     "role": "Jäsen",
+     "start": "2023-04-19",
      "end": "2026-10-23"
     }
    ],
@@ -2349,15 +2349,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "UAV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "VEJ01",
      "role": "Jäsen",
      "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -3289,7 +3289,7 @@
     "CFy": 25,
     "CFd": 25,
     "S": 130,
-    "Smin": 127.0,
+    "Smin": 126.4,
     "ST": 14,
     "SV": 95,
     "SR": 19,
@@ -3337,6 +3337,12 @@
      "end": "2026-10-23"
     },
     {
+     "code": "SOTJ01",
+     "role": "Jäsen",
+     "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
      "code": "SIV01",
      "role": "Jäsen",
      "start": "2023-04-19",
@@ -3346,12 +3352,6 @@
      "code": "VAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Jäsen",
-     "start": "2023-09-08",
      "end": "2026-10-23"
     }
    ],
@@ -4155,12 +4155,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "PEV01",
      "role": "Varajäsen",
      "start": "2023-04-19",
@@ -4169,6 +4163,12 @@
     {
      "code": "SUV01",
      "role": "Varajäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     }
@@ -4669,6 +4669,12 @@
      "end": "2026-10-23"
     },
     {
+     "code": "SOTJ01",
+     "role": "Lisäjäsen",
+     "start": "2025-11-11",
+     "end": "2026-10-23"
+    },
+    {
      "code": "KTJ01",
      "role": "Jäsen",
      "start": "2025-06-05",
@@ -4684,12 +4690,6 @@
      "code": "VAV01",
      "role": "Jäsen",
      "start": "2025-06-04",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Lisäjäsen",
-     "start": "2025-11-11",
      "end": "2026-10-23"
     }
    ],
@@ -4875,15 +4875,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "UAV01",
-     "role": "Jäsen",
-     "start": "2024-12-13",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Jäsen",
+     "start": "2024-12-13",
      "end": "2026-10-23"
     }
    ],
@@ -5108,18 +5108,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "TRV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "PUV01",
-     "role": "Varajäsen",
-     "start": "2023-09-26",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
@@ -5132,9 +5120,21 @@
      "end": "2026-10-23"
     },
     {
+     "code": "TRV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
      "code": "TIV01",
      "role": "Jäsen",
      "start": "2025-09-04",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "PUV01",
+     "role": "Varajäsen",
+     "start": "2023-09-26",
      "end": "2026-10-23"
     }
    ],
@@ -5717,15 +5717,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "TRV01",
-     "role": "Varajäsen",
-     "start": "2024-10-24",
-     "end": "2026-10-23"
-    },
-    {
      "code": "YMV01",
      "role": "Jäsen",
      "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TRV01",
+     "role": "Varajäsen",
+     "start": "2024-10-24",
      "end": "2026-10-23"
     },
     {
@@ -5965,12 +5965,6 @@
    ],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "PEV01",
      "role": "Jäsen",
      "start": "2023-06-28",
@@ -5980,6 +5974,12 @@
      "code": "TIV01",
      "role": "Puheenjohtaja",
      "start": "2024-09-11",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     }
    ],
@@ -6223,6 +6223,12 @@
      "end": "2026-10-23"
     },
     {
+     "code": "TAV01",
+     "role": "Jäsen",
+     "start": "2026-10-01",
+     "end": "2026-10-23"
+    },
+    {
      "code": "KTJ01",
      "role": "Jäsen",
      "start": "2023-09-08",
@@ -6238,12 +6244,6 @@
      "code": "VAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "TAV01",
-     "role": "Jäsen",
-     "start": "2026-10-01",
      "end": "2026-10-23"
     }
    ],
@@ -6573,13 +6573,13 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
+     "code": "TIV01",
      "role": "Jäsen",
      "start": "2025-02-07",
      "end": "2026-10-23"
     },
     {
-     "code": "TIV01",
+     "code": "LIV01",
      "role": "Jäsen",
      "start": "2025-02-07",
      "end": "2026-10-23"
@@ -6894,15 +6894,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "TYV01",
-     "role": "Jäsen",
-     "start": "2026-09-01",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2024-09-04",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TYV01",
+     "role": "Jäsen",
+     "start": "2026-09-01",
      "end": "2026-10-23"
     }
    ],
@@ -7333,12 +7333,6 @@
    ],
    "cm": [
     {
-     "code": "TAV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "HAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
@@ -7347,6 +7341,12 @@
     {
      "code": "PEV01",
      "role": "Puheenjohtaja",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TAV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     }
@@ -7422,15 +7422,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varajäsen",
-     "start": "2026-03-27",
-     "end": "2026-10-23"
-    },
-    {
      "code": "YMV01",
      "role": "Jäsen",
      "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Varajäsen",
+     "start": "2026-03-27",
      "end": "2026-10-23"
     },
     {
@@ -7469,7 +7469,7 @@
     "CFy": 0,
     "CFd": 24,
     "S": 77,
-    "Smin": 93.6,
+    "Smin": 94.4,
     "ST": 21,
     "SV": 47,
     "SR": 2,
@@ -7749,15 +7749,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "UAV01",
-     "role": "Jäsen",
-     "start": "2026-03-12",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Varajäsen",
      "start": "2023-10-03",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Jäsen",
+     "start": "2026-03-12",
      "end": "2026-10-23"
     }
    ],
@@ -7838,6 +7838,12 @@
      "end": "2026-10-23"
     },
     {
+     "code": "SOTJ01",
+     "role": "Jäsen",
+     "start": "2025-02-14",
+     "end": "2026-10-23"
+    },
+    {
      "code": "VEJ01",
      "role": "Jäsen",
      "start": "2025-02-14",
@@ -7846,12 +7852,6 @@
     {
      "code": "VAV01",
      "role": "Varapuheenjohtaja",
-     "start": "2025-02-14",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Jäsen",
      "start": "2025-02-14",
      "end": "2026-10-23"
     }
@@ -7972,7 +7972,7 @@
     "CFy": 19,
     "CFd": 19,
     "S": 70,
-    "Smin": 122.4,
+    "Smin": 122.7,
     "ST": 7,
     "SV": 35,
     "SR": 5,
@@ -8014,13 +8014,13 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
+     "code": "PEV01",
      "role": "Jäsen",
      "start": "2024-09-04",
      "end": "2026-10-23"
     },
     {
-     "code": "PEV01",
+     "code": "TAV01",
      "role": "Jäsen",
      "start": "2024-09-04",
      "end": "2026-10-23"
@@ -8199,15 +8199,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "UAV01",
-     "role": "Varajäsen",
-     "start": "2025-06-16",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TIV01",
      "role": "Jäsen",
      "start": "2023-09-22",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Varajäsen",
+     "start": "2025-06-16",
      "end": "2026-10-23"
     }
    ],
@@ -8284,15 +8284,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "TYV01",
-     "role": "Jäsen",
-     "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
      "code": "KTJ01",
      "role": "Lisäjäsen",
      "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TYV01",
+     "role": "Jäsen",
+     "start": "2023-04-19",
      "end": "2026-10-23"
     },
     {
@@ -8462,15 +8462,21 @@
    "roles": [],
    "cm": [
     {
-     "code": "KTJ01",
+     "code": "YMV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "SOTJ01",
      "role": "Jäsen",
      "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
+     "code": "KTJ01",
+     "role": "Jäsen",
+     "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
@@ -8483,12 +8489,6 @@
      "code": "VAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Jäsen",
-     "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
@@ -8575,6 +8575,12 @@
      "end": "2026-10-23"
     },
     {
+     "code": "SOTJ01",
+     "role": "Jäsen",
+     "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
      "code": "STV01",
      "role": "Varajäsen",
      "start": "2023-04-19",
@@ -8584,12 +8590,6 @@
      "code": "VAV01",
      "role": "Jäsen",
      "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Jäsen",
-     "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
@@ -8670,13 +8670,13 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
+     "code": "STV01",
      "role": "Jäsen",
      "start": "2025-03-07",
      "end": "2026-10-23"
     },
     {
-     "code": "STV01",
+     "code": "TAV01",
      "role": "Jäsen",
      "start": "2025-03-07",
      "end": "2026-10-23"
@@ -8828,12 +8828,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "UAV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TRV01",
      "role": "Varapuheenjohtaja",
      "start": "2023-04-19",
@@ -8842,6 +8836,12 @@
     {
      "code": "PUV01",
      "role": "Varajäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     }
@@ -9067,18 +9067,6 @@
    ],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Puheenjohtaja",
-     "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "STV01",
-     "role": "Varajäsen",
-     "start": "2024-10-24",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2024-05-03",
@@ -9088,6 +9076,18 @@
      "code": "SUVTJ01",
      "role": "Jäsen",
      "start": "2024-05-15",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "STV01",
+     "role": "Varajäsen",
+     "start": "2024-10-24",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Puheenjohtaja",
+     "start": "2023-04-19",
      "end": "2026-10-23"
     }
    ],
@@ -9245,27 +9245,27 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
-     "role": "Varajäsen",
-     "start": "2025-05-27",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "UAV01",
-     "role": "Varajäsen",
-     "start": "2025-02-11",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2023-04-19",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TAV01",
+     "role": "Varajäsen",
+     "start": "2025-05-27",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Varajäsen",
+     "start": "2025-02-11",
      "end": "2026-10-23"
     }
    ],
@@ -9340,15 +9340,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "YMV01",
+     "role": "Varajäsen",
+     "start": "2026-02-13",
      "end": "2026-10-23"
     },
     {
@@ -9358,9 +9358,9 @@
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
-     "role": "Varajäsen",
-     "start": "2026-02-13",
+     "code": "LIV01",
+     "role": "Jäsen",
+     "start": "2023-04-19",
      "end": "2026-10-23"
     }
    ],
@@ -9607,15 +9607,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "MAJ01",
      "role": "Jäsen",
      "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -9708,15 +9708,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TUV01",
      "role": "Varajäsen",
      "start": "2023-09-19",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "YMV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -9726,8 +9726,8 @@
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
-     "role": "Varajäsen",
+     "code": "LIV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
@@ -9916,12 +9916,6 @@
      "end": "2026-10-23"
     },
     {
-     "code": "UAV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
@@ -9931,6 +9925,12 @@
      "code": "TIV01",
      "role": "Jäsen",
      "start": "2024-05-24",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -10019,14 +10019,14 @@
    ],
    "cm": [
     {
-     "code": "TAV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
+     "code": "MAJ01",
+     "role": "Lisäjäsen",
+     "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
-     "code": "MAJ01",
-     "role": "Lisäjäsen",
+     "code": "SOTJ01",
+     "role": "Puheenjohtaja",
      "start": "2023-09-08",
      "end": "2026-10-23"
     },
@@ -10034,6 +10034,12 @@
      "code": "STV01",
      "role": "Jäsen",
      "start": "2023-04-19",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TAV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -10046,12 +10052,6 @@
      "code": "VAV01",
      "role": "Jäsen",
      "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Puheenjohtaja",
-     "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
@@ -10138,14 +10138,14 @@
      "end": "2026-10-23"
     },
     {
-     "code": "PUV01",
-     "role": "Jäsen",
+     "code": "TAV01",
+     "role": "Varajäsen",
      "start": "2023-04-19",
      "end": "2026-10-23"
     },
     {
-     "code": "TAV01",
-     "role": "Varajäsen",
+     "code": "PUV01",
+     "role": "Jäsen",
      "start": "2023-04-19",
      "end": "2026-10-23"
     },
@@ -10312,15 +10312,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "TYV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Varajäsen",
      "start": "2023-04-19",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TYV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -10401,13 +10401,13 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
+     "code": "TUV01",
      "role": "Jäsen",
      "start": "2024-09-04",
      "end": "2026-10-23"
     },
     {
-     "code": "TUV01",
+     "code": "TAV01",
      "role": "Jäsen",
      "start": "2024-09-04",
      "end": "2026-10-23"
@@ -10644,14 +10644,14 @@
    "roles": [],
    "cm": [
     {
-     "code": "TYV01",
-     "role": "Jäsen",
+     "code": "YMV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
-     "role": "Varajäsen",
+     "code": "TYV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
@@ -10971,12 +10971,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2024-11-06",
-     "end": "2026-10-23"
-    },
-    {
      "code": "LAV01",
      "role": "Jäsen",
      "start": "2024-11-06",
@@ -10985,6 +10979,12 @@
     {
      "code": "TYV01",
      "role": "Varajäsen",
+     "start": "2024-11-06",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Jäsen",
      "start": "2024-11-06",
      "end": "2026-10-23"
     }
@@ -11258,7 +11258,7 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
+     "code": "YMV01",
      "role": "Jäsen",
      "start": "2023-04-19",
      "end": "2026-10-23"
@@ -11270,7 +11270,7 @@
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
+     "code": "LIV01",
      "role": "Jäsen",
      "start": "2023-04-19",
      "end": "2026-10-23"
@@ -11531,15 +11531,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "UAV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "PUV01",
      "role": "Varajäsen",
      "start": "2023-04-19",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     }
    ],
@@ -11620,15 +11620,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "TYV01",
-     "role": "Varajäsen",
-     "start": "2025-05-23",
-     "end": "2026-10-23"
-    },
-    {
      "code": "KTJ01",
      "role": "Jäsen",
      "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TYV01",
+     "role": "Varajäsen",
+     "start": "2025-05-23",
      "end": "2026-10-23"
     },
     {
@@ -12104,7 +12104,7 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
+     "code": "YMV01",
      "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
@@ -12116,14 +12116,14 @@
      "end": "2026-10-23"
     },
     {
-     "code": "TRV01",
-     "role": "Varajäsen",
+     "code": "TAV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
-     "role": "Jäsen",
+     "code": "TRV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     }
@@ -12199,15 +12199,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "PUV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "YMV01",
      "role": "Jäsen",
      "start": "2026-09-01",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "PUV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     }
    ],
@@ -12365,8 +12365,8 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varajäsen",
+     "code": "YMV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
@@ -12377,8 +12377,8 @@
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
-     "role": "Jäsen",
+     "code": "LIV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     }
@@ -12769,15 +12769,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "TRV01",
-     "role": "Varajäsen",
-     "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TRV01",
+     "role": "Varajäsen",
+     "start": "2023-04-19",
      "end": "2026-10-23"
     },
     {
@@ -12858,6 +12858,12 @@
    "roles": [],
    "cm": [
     {
+     "code": "YMV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
      "code": "TAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
@@ -12865,12 +12871,6 @@
     },
     {
      "code": "TYV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "YMV01",
      "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
@@ -13036,6 +13036,12 @@
    "roles": [],
    "cm": [
     {
+     "code": "SOTJ01",
+     "role": "Jäsen",
+     "start": "2025-09-05",
+     "end": "2026-10-23"
+    },
+    {
      "code": "STV01",
      "role": "Jäsen",
      "start": "2023-04-19",
@@ -13045,12 +13051,6 @@
      "code": "VAV01",
      "role": "Varajäsen",
      "start": "2025-09-03",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Jäsen",
-     "start": "2025-09-05",
      "end": "2026-10-23"
     },
     {
@@ -13137,15 +13137,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varapuheenjohtaja",
-     "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
      "code": "PUV01",
      "role": "Jäsen",
      "start": "2024-09-04",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Varapuheenjohtaja",
+     "start": "2023-04-19",
      "end": "2026-10-23"
     }
    ],
@@ -13612,12 +13612,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "HAV01",
      "role": "Jäsen",
      "start": "2023-06-28",
@@ -13631,6 +13625,12 @@
     },
     {
      "code": "STV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
@@ -13802,14 +13802,14 @@
      "end": "2026-10-23"
     },
     {
-     "code": "STV01",
-     "role": "Varajäsen",
+     "code": "PEV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "PEV01",
-     "role": "Jäsen",
+     "code": "STV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     }
@@ -13885,12 +13885,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
@@ -13899,6 +13893,12 @@
     {
      "code": "TRV01",
      "role": "Jäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
@@ -13980,6 +13980,12 @@
    "roles": [],
    "cm": [
     {
+     "code": "SOTJ01",
+     "role": "Jäsen",
+     "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
      "code": "TYV01",
      "role": "Varapuheenjohtaja",
      "start": "2023-04-19",
@@ -13989,12 +13995,6 @@
      "code": "VAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Jäsen",
-     "start": "2023-09-08",
      "end": "2026-10-23"
     }
    ],
@@ -14158,12 +14158,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "LAV01",
      "role": "Jäsen",
      "start": "2023-06-28",
@@ -14178,6 +14172,12 @@
     {
      "code": "TAV01",
      "role": "Varajäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     }
@@ -14431,12 +14431,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SITJ01",
      "role": "Jäsen",
      "start": "2023-09-08",
@@ -14452,6 +14446,12 @@
      "code": "KTJ01",
      "role": "Jäsen",
      "start": "2024-05-24",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -14627,9 +14627,9 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varajäsen",
-     "start": "2025-09-09",
+     "code": "YMV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -14639,9 +14639,9 @@
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
+     "code": "LIV01",
+     "role": "Varajäsen",
+     "start": "2025-09-09",
      "end": "2026-10-23"
     }
    ],
@@ -14716,14 +14716,14 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
+     "code": "LAV01",
+     "role": "Varajäsen",
      "start": "2026-03-27",
      "end": "2026-10-23"
     },
     {
-     "code": "LAV01",
-     "role": "Varajäsen",
+     "code": "LIV01",
+     "role": "Jäsen",
      "start": "2026-03-27",
      "end": "2026-10-23"
     },
@@ -15225,19 +15225,7 @@
      "end": "2026-10-23"
     },
     {
-     "code": "TRV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "YMV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "VAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
@@ -15246,6 +15234,18 @@
      "code": "SOTJ01",
      "role": "Lisäjäsen",
      "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TRV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "VAV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -15326,14 +15326,14 @@
    "roles": [],
    "cm": [
     {
-     "code": "STV01",
-     "role": "Jäsen",
+     "code": "PEV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "PEV01",
-     "role": "Varajäsen",
+     "code": "STV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
@@ -15504,21 +15504,21 @@
    "roles": [],
    "cm": [
     {
+     "code": "YMV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
      "code": "SITJ01",
      "role": "Lisäjäsen",
      "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
-     "code": "STV01",
+     "code": "SOTJ01",
      "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "YMV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
+     "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
@@ -15528,15 +15528,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "VAV01",
-     "role": "Varajäsen",
+     "code": "STV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "SOTJ01",
-     "role": "Jäsen",
-     "start": "2023-09-08",
+     "code": "VAV01",
+     "role": "Varajäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     }
    ],
@@ -15611,13 +15611,13 @@
    "roles": [],
    "cm": [
     {
-     "code": "PUV01",
+     "code": "SUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "SUV01",
+     "code": "PUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
@@ -15694,12 +15694,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
-     "role": "Jäsen",
-     "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
@@ -15709,6 +15703,12 @@
      "code": "STV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TAV01",
+     "role": "Jäsen",
+     "start": "2023-04-19",
      "end": "2026-10-23"
     }
    ],
@@ -15783,12 +15783,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varajäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TRV01",
      "role": "Jäsen",
      "start": "2023-04-19",
@@ -15797,6 +15791,12 @@
     {
      "code": "PUV01",
      "role": "Jäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     }
@@ -15872,13 +15872,13 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
+     "code": "LAV01",
      "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "LAV01",
+     "code": "TAV01",
      "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
@@ -16133,12 +16133,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "YMV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
@@ -16148,6 +16142,12 @@
      "code": "SUV01",
      "role": "Varajäsen",
      "start": "2026-02-13",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TAV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
@@ -16397,14 +16397,14 @@
    "roles": [],
    "cm": [
     {
-     "code": "TYV01",
-     "role": "Varajäsen",
+     "code": "YMV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "YMV01",
-     "role": "Jäsen",
+     "code": "TYV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
@@ -16486,14 +16486,14 @@
    "roles": [],
    "cm": [
     {
-     "code": "TRV01",
-     "role": "Varajäsen",
+     "code": "SUV01",
+     "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
     {
-     "code": "SUV01",
-     "role": "Jäsen",
+     "code": "TRV01",
+     "role": "Varajäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
     },
@@ -16664,12 +16664,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "UAV01",
-     "role": "Jäsen",
-     "start": "2023-04-19",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2023-04-19",
@@ -16679,6 +16673,12 @@
      "code": "SUVTJ01",
      "role": "Jäsen",
      "start": "2023-04-25",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Jäsen",
+     "start": "2023-04-19",
      "end": "2026-10-23"
     }
    ],
@@ -17373,15 +17373,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "VEJ01",
-     "role": "Jäsen",
-     "start": "2023-09-08",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "VEJ01",
+     "role": "Jäsen",
+     "start": "2023-09-08",
      "end": "2026-10-23"
     },
     {
@@ -17471,6 +17471,12 @@
      "end": "2026-10-23"
     },
     {
+     "code": "SOTJ01",
+     "role": "Jäsen",
+     "start": "2023-09-08",
+     "end": "2026-10-23"
+    },
+    {
      "code": "UAV01",
      "role": "Varajäsen",
      "start": "2023-09-06",
@@ -17480,12 +17486,6 @@
      "code": "VAV01",
      "role": "Jäsen",
      "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "SOTJ01",
-     "role": "Jäsen",
-     "start": "2023-09-08",
      "end": "2026-10-23"
     }
    ],
@@ -17720,15 +17720,15 @@
    ],
    "cm": [
     {
-     "code": "TYV01",
-     "role": "Puheenjohtaja",
-     "start": "2025-05-21",
-     "end": "2026-10-23"
-    },
-    {
      "code": "SUV01",
      "role": "Jäsen",
      "start": "2025-06-16",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TYV01",
+     "role": "Puheenjohtaja",
+     "start": "2025-05-21",
      "end": "2026-10-23"
     },
     {
@@ -17811,15 +17811,15 @@
    "roles": [],
    "cm": [
     {
-     "code": "UAV01",
-     "role": "Varajäsen",
-     "start": "2025-02-11",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TIV01",
      "role": "Jäsen",
      "start": "2023-09-22",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "UAV01",
+     "role": "Varajäsen",
+     "start": "2025-02-11",
      "end": "2026-10-23"
     }
    ],
@@ -18344,7 +18344,7 @@
     "CFy": 12,
     "CFd": 12,
     "S": 79,
-    "Smin": 64.9,
+    "Smin": 64.7,
     "ST": 14,
     "SV": 50,
     "SR": 12,
@@ -18647,12 +18647,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2024-09-04",
-     "end": "2026-10-23"
-    },
-    {
      "code": "LAV01",
      "role": "Varajäsen",
      "start": "2025-11-25",
@@ -18665,14 +18659,20 @@
      "end": "2026-10-23"
     },
     {
+     "code": "SUV01",
+     "role": "Varajäsen",
+     "start": "2024-09-04",
+     "end": "2026-10-23"
+    },
+    {
      "code": "TRV01",
      "role": "Varajäsen",
      "start": "2025-04-29",
      "end": "2026-10-23"
     },
     {
-     "code": "SUV01",
-     "role": "Varajäsen",
+     "code": "LIV01",
+     "role": "Jäsen",
      "start": "2024-09-04",
      "end": "2026-10-23"
     }
@@ -18748,18 +18748,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Varajäsen",
-     "start": "2026-02-13",
-     "end": "2026-10-23"
-    },
-    {
-     "code": "TAV01",
-     "role": "Jäsen",
-     "start": "2024-11-06",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TUV01",
      "role": "Varajäsen",
      "start": "2024-09-04",
@@ -18769,6 +18757,18 @@
      "code": "YMV01",
      "role": "Jäsen",
      "start": "2024-09-04",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "TAV01",
+     "role": "Jäsen",
+     "start": "2024-11-06",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
+     "role": "Varajäsen",
+     "start": "2026-02-13",
      "end": "2026-10-23"
     }
    ],
@@ -18938,15 +18938,15 @@
      "end": "2026-10-23"
     },
     {
-     "code": "STV01",
-     "role": "Varajäsen",
-     "start": "2025-09-03",
-     "end": "2026-10-23"
-    },
-    {
      "code": "PEV01",
      "role": "Jäsen",
      "start": "2026-05-26",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "STV01",
+     "role": "Varajäsen",
+     "start": "2025-09-03",
      "end": "2026-10-23"
     },
     {
@@ -19027,13 +19027,13 @@
    "roles": [],
    "cm": [
     {
-     "code": "TAV01",
+     "code": "STV01",
      "role": "Varajäsen",
      "start": "2025-06-13",
      "end": "2026-10-23"
     },
     {
-     "code": "STV01",
+     "code": "TAV01",
      "role": "Varajäsen",
      "start": "2025-06-13",
      "end": "2026-10-23"
@@ -19993,12 +19993,6 @@
    "roles": [],
    "cm": [
     {
-     "code": "LIV01",
-     "role": "Jäsen",
-     "start": "2023-06-28",
-     "end": "2026-10-23"
-    },
-    {
      "code": "TUV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
@@ -20006,6 +20000,12 @@
     },
     {
      "code": "YMV01",
+     "role": "Jäsen",
+     "start": "2023-06-28",
+     "end": "2026-10-23"
+    },
+    {
+     "code": "LIV01",
      "role": "Jäsen",
      "start": "2023-06-28",
      "end": "2026-10-23"
