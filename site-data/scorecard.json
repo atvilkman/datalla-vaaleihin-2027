@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-23",
+  "generated": "2026-11-24",
   "votes": 2853,
   "rollcalls": 465,
   "firstVote": "2023-06-20",
@@ -949,7 +949,7 @@
    "att": null
   },
   "SOTJ01": {
-   "name": "Kunta- ja terveysjaosto",
+   "name": "Kunta- ja hyvinvointijaosto",
    "members": [
     "1202",
     "1312",
@@ -3337,12 +3337,6 @@
      "end": "2026-11-20"
     },
     {
-     "code": "SOTJ01",
-     "role": "Jäsen",
-     "start": "2023-09-08",
-     "end": "2026-11-20"
-    },
-    {
      "code": "SIV01",
      "role": "Jäsen",
      "start": "2023-04-19",
@@ -3352,6 +3346,12 @@
      "code": "VAV01",
      "role": "Varajäsen",
      "start": "2023-06-28",
+     "end": "2026-11-20"
+    },
+    {
+     "code": "SOTJ01",
+     "role": "Jäsen",
+     "start": "2023-09-08",
      "end": "2026-11-20"
     }
    ],
@@ -4347,7 +4347,7 @@
     "CFy": 22,
     "CFd": 22,
     "S": 148,
-    "Smin": 274.4,
+    "Smin": 273.4,
     "ST": 1,
     "SV": 87,
     "SR": 0,
@@ -13082,7 +13082,7 @@
     "CFy": 27,
     "CFd": 27,
     "S": 166,
-    "Smin": 201.2,
+    "Smin": 204.9,
     "ST": 55,
     "SV": 89,
     "SR": 14,
@@ -18337,7 +18337,7 @@
     "CFy": 14,
     "CFd": 14,
     "S": 79,
-    "Smin": 65.3,
+    "Smin": 65.1,
     "ST": 14,
     "SV": 50,
     "SR": 12,
